@@ -102,69 +102,6 @@
     statNums.forEach((el) => statIO.observe(el));
   }
 
-  /* ---- Featured listings: category filter ---- */
-  const filterPills = document.querySelectorAll(".filter-pill");
-  const productCards = document.querySelectorAll(".product-card");
-  const emptyState = document.querySelector(".product-empty");
-
-  filterPills.forEach((pill) => {
-    pill.addEventListener("click", () => {
-      filterPills.forEach((p) => {
-        p.classList.remove("active");
-        p.setAttribute("aria-selected", "false");
-      });
-      pill.classList.add("active");
-      pill.setAttribute("aria-selected", "true");
-
-      const filter = pill.dataset.filter;
-      let visible = 0;
-      productCards.forEach((card) => {
-        const match = filter === "all" || card.dataset.category === filter;
-        card.classList.toggle("hide", !match);
-        if (match) visible++;
-      });
-      if (emptyState) emptyState.hidden = visible !== 0;
-    });
-  });
-
-  /* ---- Add to cart ---- */
-  const cartBadge = document.querySelector(".cart-badge");
-  const addCartButtons = document.querySelectorAll(".add-cart-btn");
-  let cartCount = parseInt(cartBadge && cartBadge.textContent, 10) || 0;
-
-  let toastEl = null;
-  let toastTimer = null;
-  const showToast = (message) => {
-    if (!toastEl) {
-      toastEl = document.createElement("div");
-      toastEl.className = "cart-toast";
-      toastEl.innerHTML =
-        '<span class="cart-toast-check"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5 11-11"></path></svg></span><span class="cart-toast-text"></span>';
-      document.body.appendChild(toastEl);
-    }
-    toastEl.querySelector(".cart-toast-text").textContent = message;
-    toastEl.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2200);
-  };
-
-  addCartButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      cartCount += 1;
-      if (cartBadge) cartBadge.textContent = String(cartCount);
-      const name = btn.dataset.name || "Item";
-      showToast(`Added "${name}" to cart`);
-    });
-  });
-
-  /* ---- Wishlist toggle ---- */
-  document.querySelectorAll(".fav-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const pressed = btn.getAttribute("aria-pressed") === "true";
-      btn.setAttribute("aria-pressed", String(!pressed));
-    });
-  });
-
   /* ---- Year in footer ---- */
   const yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
