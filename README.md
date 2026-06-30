@@ -6,9 +6,9 @@ worldwide. Built to a premium startup standard — clean luxury aesthetic,
 soft shadows, rounded corners, spacious layout, and modern typography in the
 spirit of Shopify + Stripe + Airbnb.
 
-> This is a **marketplace UI mockup**. By design it shows platform visuals,
-> categories, seller cards, and trust elements only — **no products, product
-> cards, or product imagery**.
+> This is a **marketplace UI mockup**. Product photography is represented with
+> abstract gradient + icon placeholders (no external images), keeping the
+> page dependency-free while still showing a realistic buy-and-sell flow.
 
 ## Preview
 
@@ -29,12 +29,13 @@ start index.html         # Windows
 | 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
 | 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
 | 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
-| 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
-| 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
-| 6 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
-| 7 | **Testimonials** | Three modern review cards with avatars |
-| 8 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
-| 9 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
+| 4 | **Featured Listings** | Eight live product cards (title, seller, price, rating, badges) with working category filter pills, wishlist toggle, and add-to-cart |
+| 5 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
+| 6 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
+| 7 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
+| 8 | **Testimonials** | Three modern review cards with avatars |
+| 9 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
+| 10 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
 
 ## Design system
 
@@ -59,9 +60,10 @@ start index.html         # Windows
 ## Files
 
 ```
-index.html    # markup for all nine sections
+index.html    # markup for all ten sections
 styles.css    # design system + component styles + responsive rules
-script.js     # sticky nav, mobile menu, scroll reveals, stat counters
+script.js     # sticky nav, mobile menu, scroll reveals, stat counters,
+               # product filtering, add-to-cart toast, wishlist toggle
 ```
 
 ## Responsiveness & accessibility
