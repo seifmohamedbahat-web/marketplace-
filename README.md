@@ -27,7 +27,7 @@ start index.html         # Windows
 | # | Section | Highlights |
 |---|---------|-----------|
 | 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
-| 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
+| 2 | **Hero** | Headline + dual CTAs over a pointer-reactive, slowly-drifting gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, animated global-shipping route, and a customer review card |
 | 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
 | 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
 | 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |

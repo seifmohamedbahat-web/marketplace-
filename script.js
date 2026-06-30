@@ -105,4 +105,37 @@
   /* ---- Year in footer ---- */
   const yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---- Hero visual parallax (pointer-following drift) ---- */
+  const heroSection = document.querySelector(".hero");
+  const heroVisual = document.getElementById("heroVisual");
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (heroSection && heroVisual && !reduce && finePointer) {
+    heroSection.addEventListener("pointermove", (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      heroVisual.style.transform = `translate3d(${px * -18}px, ${py * -14}px, 0)`;
+    });
+    heroSection.addEventListener("pointerleave", () => {
+      heroVisual.style.transform = "translate3d(0, 0, 0)";
+    });
+  }
+
+  /* ---- Tilt-on-pointer for cards ---- */
+  const tiltEls = document.querySelectorAll(".tilt");
+  if (tiltEls.length && !reduce && finePointer) {
+    tiltEls.forEach((card) => {
+      card.addEventListener("pointermove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${py * -9}deg) rotateY(${px * 11}deg) translateY(-6px) translateZ(8px)`;
+      });
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
 })();

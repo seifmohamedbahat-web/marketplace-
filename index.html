@@ -91,10 +91,10 @@
       </div>
       <div class="hero-trust">
         <div class="avatars" aria-hidden="true">
-          <span class="av av1"></span>
-          <span class="av av2"></span>
-          <span class="av av3"></span>
-          <span class="av av4"></span>
+          <span class="av av1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 20c1.4-3.6 4-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></span>
+          <span class="av av2"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 20c1.4-3.6 4-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></span>
+          <span class="av av3"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 20c1.4-3.6 4-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></span>
+          <span class="av av4"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 20c1.4-3.6 4-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></span>
           <span class="av-more">+9k</span>
         </div>
         <div class="hero-trust-text">
@@ -105,7 +105,7 @@
     </div>
 
     <!-- Hero Visual: abstract connected-world commerce (no products) -->
-    <div class="hero-visual reveal" aria-hidden="true">
+    <div class="hero-visual reveal" id="heroVisual" aria-hidden="true">
       <div class="globe-wrap">
         <svg class="globe" viewBox="0 0 520 520" role="img" aria-label="Abstract global commerce network">
           <defs>
@@ -219,6 +219,22 @@
             <div class="fc-ship-title">Global shipping</div>
             <div class="fc-ship-sub">Insured · 50+ countries</div>
           </div>
+          <svg class="fc-ship-route" viewBox="0 0 60 10" width="44" height="10" aria-hidden="true">
+            <path d="M2 5h56" stroke="#06B6D4" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"></path>
+            <circle class="fc-ship-dot" cx="2" cy="5" r="3" fill="#06B6D4"></circle>
+          </svg>
+        </div>
+
+        <div class="float-card fc-review">
+          <div class="fc-review-top">
+            <span class="fc-review-score">4.9</span>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+          </div>
+          <p class="fc-review-quote">“Exactly as described — shipped fast!”</p>
+          <span class="fc-review-name">
+            <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#16A34A" d="M12 2 14.4 4l3-.4.7 3 2.6 1.7-1.3 2.7 1.3 2.7-2.6 1.7-.7 3-3-.4L12 22l-2.4-2-3 .4-.7-3L3.3 15.7l1.3-2.7-1.3-2.7L5.9 6.6l.7-3 3 .4Z"></path><path fill="#fff" d="m8.5 12 2.3 2.3 4.5-4.8"></path></svg>
+            Verified Buyer
+          </span>
         </div>
       </div>
     </div>
@@ -227,12 +243,19 @@
   <!-- brand strip -->
   <div class="container brandstrip reveal">
     <span class="brandstrip-label">Powering trusted commerce with</span>
-    <div class="brandstrip-logos">
-      <span class="bs-logo">★ Stripe&nbsp;Secured</span>
-      <span class="bs-logo">◇ Escrow&nbsp;Protected</span>
-      <span class="bs-logo">⬡ Verified&nbsp;Sellers</span>
-      <span class="bs-logo">⌁ Global&nbsp;Logistics</span>
-      <span class="bs-logo">✦ Buyer&nbsp;Guarantee</span>
+    <div class="brandstrip-mask">
+      <div class="brandstrip-logos">
+        <span class="bs-logo">★ Stripe&nbsp;Secured</span>
+        <span class="bs-logo">◇ Escrow&nbsp;Protected</span>
+        <span class="bs-logo">⬡ Verified&nbsp;Sellers</span>
+        <span class="bs-logo">⌁ Global&nbsp;Logistics</span>
+        <span class="bs-logo">✦ Buyer&nbsp;Guarantee</span>
+        <span class="bs-logo" aria-hidden="true">★ Stripe&nbsp;Secured</span>
+        <span class="bs-logo" aria-hidden="true">◇ Escrow&nbsp;Protected</span>
+        <span class="bs-logo" aria-hidden="true">⬡ Verified&nbsp;Sellers</span>
+        <span class="bs-logo" aria-hidden="true">⌁ Global&nbsp;Logistics</span>
+        <span class="bs-logo" aria-hidden="true">✦ Buyer&nbsp;Guarantee</span>
+      </div>
     </div>
   </div>
 </section>
@@ -248,7 +271,7 @@
 
     <div class="cat-grid">
       <!-- Fashion -->
-      <a href="#" class="cat-card reveal">
+      <a href="#" class="cat-card reveal tilt">
         <span class="cat-icon ci-blue">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 6 6l-3.5 2 2 4 2-1v9.5h11V11l2 1 2-4L18 6l-3-3a4 4 0 0 1-6 0Z"></path></svg>
         </span>
@@ -257,7 +280,7 @@
         <span class="cat-arrow" aria-hidden="true">→</span>
       </a>
       <!-- Home Decor -->
-      <a href="#" class="cat-card reveal">
+      <a href="#" class="cat-card reveal tilt">
         <span class="cat-icon ci-purple">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8"></path><path d="M5 9.5V21h14V9.5"></path><path d="M9.5 21v-6h5v6"></path></svg>
         </span>
@@ -266,7 +289,7 @@
         <span class="cat-arrow" aria-hidden="true">→</span>
       </a>
       <!-- Jewelry -->
-      <a href="#" class="cat-card reveal">
+      <a href="#" class="cat-card reveal tilt">
         <span class="cat-icon ci-cyan">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 5-9 13L3 8Z"></path><path d="M3 8h18"></path><path d="m9 3-3 5 6 13 6-13-3-5"></path></svg>
         </span>
@@ -275,7 +298,7 @@
         <span class="cat-arrow" aria-hidden="true">→</span>
       </a>
       <!-- Art -->
-      <a href="#" class="cat-card reveal">
+      <a href="#" class="cat-card reveal tilt">
         <span class="cat-icon ci-blue">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.3"></circle><circle cx="17.5" cy="10.5" r="1.3"></circle><circle cx="8.5" cy="7.5" r="1.3"></circle><circle cx="6.5" cy="12.5" r="1.3"></circle><path d="M12 2a10 10 0 1 0 0 20c1.7 0 2-1.5 1.2-2.4-1-1.2-.2-2.6 1.3-2.6H17a5 5 0 0 0 5-5c0-5-4.5-8-10-8Z"></path></svg>
         </span>
@@ -284,7 +307,7 @@
         <span class="cat-arrow" aria-hidden="true">→</span>
       </a>
       <!-- Handmade Gifts -->
-      <a href="#" class="cat-card reveal">
+      <a href="#" class="cat-card reveal tilt">
         <span class="cat-icon ci-purple">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8H4v4h16Z"></path><path d="M5 12v9h14v-9"></path><path d="M12 8v13"></path><path d="M12 8S10.5 3.5 8 4c-2 .4-1.7 4 .5 4Z"></path><path d="M12 8s1.5-4.5 4-4c2 .4 1.7 4-.5 4Z"></path></svg>
         </span>
@@ -293,7 +316,7 @@
         <span class="cat-arrow" aria-hidden="true">→</span>
       </a>
       <!-- Tech Accessories -->
-      <a href="#" class="cat-card reveal">
+      <a href="#" class="cat-card reveal tilt">
         <span class="cat-icon ci-cyan">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"></rect><path d="M11 18.5h2"></path></svg>
         </span>
@@ -315,28 +338,28 @@
     </div>
 
     <div class="why-grid">
-      <div class="why-card reveal">
+      <div class="why-card reveal tilt">
         <span class="why-icon wi-blue">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M2.5 12h19"></path><path d="M12 2.5c3 3.5 3 16.5 0 19c-3-2.5-3-15.5 0-19Z"></path></svg>
         </span>
         <h3>Worldwide Sellers</h3>
         <p>Connect with creators from over 50 countries.</p>
       </div>
-      <div class="why-card reveal">
+      <div class="why-card reveal tilt">
         <span class="why-icon wi-purple">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 6v6c0 5 3.5 8 8 9.5 4.5-1.5 8-4.5 8-9.5V6Z"></path><path d="m9 12 2 2 4-4"></path></svg>
         </span>
         <h3>Secure Payments</h3>
         <p>Protected transactions for every purchase.</p>
       </div>
-      <div class="why-card reveal">
+      <div class="why-card reveal tilt">
         <span class="why-icon wi-cyan">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3z"></path><path d="M14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="1.7"></circle><circle cx="17.5" cy="18" r="1.7"></circle></svg>
         </span>
         <h3>Fast Delivery</h3>
         <p>Reliable global shipping you can trust.</p>
       </div>
-      <div class="why-card reveal">
+      <div class="why-card reveal tilt">
         <span class="why-icon wi-blue">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.1 4.3 4.7.7-3.4 3.3.8 4.7L12 18l-4.2 2 .8-4.7L5.2 12l4.7-.7Z"></path></svg>
         </span>
@@ -358,10 +381,10 @@
 
     <div class="seller-grid">
       <!-- Studio Nova -->
-      <div class="seller-card reveal">
+      <div class="seller-card reveal tilt">
         <div class="seller-cover sc1"></div>
         <div class="seller-body">
-          <div class="seller-avatar sa1" aria-hidden="true"></div>
+          <div class="seller-avatar sa1" aria-hidden="true">SN</div>
           <div class="seller-name">Studio Nova
             <svg class="verified" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#2563EB" d="M12 2 14.4 4l3-.4.7 3 2.6 1.7-1.3 2.7 1.3 2.7-2.6 1.7-.7 3-3-.4L12 22l-2.4-2-3 .4-.7-3L3.3 15.7l1.3-2.7-1.3-2.7L5.9 6.6l.7-3 3 .4Z"></path><path fill="#fff" d="m8.5 12 2.3 2.3 4.5-4.8"></path></svg>
           </div>
@@ -376,10 +399,10 @@
         </div>
       </div>
       <!-- Craft House -->
-      <div class="seller-card reveal">
+      <div class="seller-card reveal tilt">
         <div class="seller-cover sc2"></div>
         <div class="seller-body">
-          <div class="seller-avatar sa2" aria-hidden="true"></div>
+          <div class="seller-avatar sa2" aria-hidden="true">CH</div>
           <div class="seller-name">Craft House
             <svg class="verified" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#7C3AED" d="M12 2 14.4 4l3-.4.7 3 2.6 1.7-1.3 2.7 1.3 2.7-2.6 1.7-.7 3-3-.4L12 22l-2.4-2-3 .4-.7-3L3.3 15.7l1.3-2.7-1.3-2.7L5.9 6.6l.7-3 3 .4Z"></path><path fill="#fff" d="m8.5 12 2.3 2.3 4.5-4.8"></path></svg>
           </div>
@@ -394,10 +417,10 @@
         </div>
       </div>
       <!-- Luxe Design -->
-      <div class="seller-card reveal">
+      <div class="seller-card reveal tilt">
         <div class="seller-cover sc3"></div>
         <div class="seller-body">
-          <div class="seller-avatar sa3" aria-hidden="true"></div>
+          <div class="seller-avatar sa3" aria-hidden="true">LD</div>
           <div class="seller-name">Luxe Design
             <svg class="verified" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#06B6D4" d="M12 2 14.4 4l3-.4.7 3 2.6 1.7-1.3 2.7 1.3 2.7-2.6 1.7-.7 3-3-.4L12 22l-2.4-2-3 .4-.7-3L3.3 15.7l1.3-2.7-1.3-2.7L5.9 6.6l.7-3 3 .4Z"></path><path fill="#fff" d="m8.5 12 2.3 2.3 4.5-4.8"></path></svg>
           </div>
@@ -412,10 +435,10 @@
         </div>
       </div>
       <!-- Urban Handmade -->
-      <div class="seller-card reveal">
+      <div class="seller-card reveal tilt">
         <div class="seller-cover sc4"></div>
         <div class="seller-body">
-          <div class="seller-avatar sa4" aria-hidden="true"></div>
+          <div class="seller-avatar sa4" aria-hidden="true">UH</div>
           <div class="seller-name">Urban Handmade
             <svg class="verified" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#2563EB" d="M12 2 14.4 4l3-.4.7 3 2.6 1.7-1.3 2.7 1.3 2.7-2.6 1.7-.7 3-3-.4L12 22l-2.4-2-3 .4-.7-3L3.3 15.7l1.3-2.7-1.3-2.7L5.9 6.6l.7-3 3 .4Z"></path><path fill="#fff" d="m8.5 12 2.3 2.3 4.5-4.8"></path></svg>
           </div>
@@ -443,7 +466,7 @@
     </div>
 
     <div class="stats-grid">
-      <div class="stat-card reveal">
+      <div class="stat-card reveal tilt">
         <span class="stat-glyph sg-blue">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18a4 4 0 0 0-8 0"></path><circle cx="12" cy="8" r="3.2"></circle><path d="M20 18a4 4 0 0 0-3-3.9"></path><path d="M4 18a4 4 0 0 1 3-3.9"></path></svg>
         </span>
@@ -451,7 +474,7 @@
         <div class="stat-label">Sellers</div>
         <div class="stat-trend up">▲ 12% this quarter</div>
       </div>
-      <div class="stat-card reveal">
+      <div class="stat-card reveal tilt">
         <span class="stat-glyph sg-purple">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M2.5 12h19"></path><path d="M12 2.5c3 3.5 3 16.5 0 19c-3-2.5-3-15.5 0-19Z"></path></svg>
         </span>
@@ -459,7 +482,7 @@
         <div class="stat-label">Countries</div>
         <div class="stat-trend up">▲ 6 added in 2026</div>
       </div>
-      <div class="stat-card reveal">
+      <div class="stat-card reveal tilt">
         <span class="stat-glyph sg-cyan">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5 5 0 0 0-7 0L12 6.3l-1.7-1.7a5 5 0 1 0-7 7L12 20l8.8-8.4a5 5 0 0 0 0-7Z"></path></svg>
         </span>
@@ -467,7 +490,7 @@
         <div class="stat-label">Customers</div>
         <div class="stat-trend up">▲ 18% YoY</div>
       </div>
-      <div class="stat-card reveal">
+      <div class="stat-card reveal tilt">
         <span class="stat-glyph sg-blue">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5Z"></path><path d="M3 7.5 12 12l9-4.5"></path><path d="M12 12v9"></path></svg>
         </span>
@@ -489,7 +512,7 @@
     </div>
 
     <div class="testi-grid">
-      <figure class="testi-card reveal">
+      <figure class="testi-card reveal tilt">
         <div class="quote-mark">“</div>
         <div class="stars">★★★★★</div>
         <blockquote>Finally a marketplace where everything feels unique and personal.</blockquote>
@@ -498,7 +521,7 @@
           <span class="testi-meta"><b>Sarah K.</b><span>Verified Buyer · 🇬🇧</span></span>
         </figcaption>
       </figure>
-      <figure class="testi-card reveal">
+      <figure class="testi-card reveal tilt">
         <div class="quote-mark">“</div>
         <div class="stars">★★★★★</div>
         <blockquote>The seller communication and experience felt amazing.</blockquote>
@@ -507,7 +530,7 @@
           <span class="testi-meta"><b>Michael R.</b><span>Verified Buyer · 🇺🇸</span></span>
         </figcaption>
       </figure>
-      <figure class="testi-card reveal">
+      <figure class="testi-card reveal tilt">
         <div class="quote-mark">“</div>
         <div class="stars">★★★★★</div>
         <blockquote>Best place to discover creators from around the world.</blockquote>
