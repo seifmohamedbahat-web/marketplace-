@@ -1,22 +1,17 @@
-# Global Market — Premium Marketplace Homepage
+# Metro Wash Pros — Pressure Washing Website
 
-A high-end, fully responsive homepage mockup for **Global Market**, a global
-marketplace platform that connects buyers with custom product creators
-worldwide. Built to a premium startup standard — clean luxury aesthetic,
-soft shadows, rounded corners, spacious layout, and modern typography in the
-spirit of Shopify + Stripe + Airbnb.
+A premium, art-directed marketing site for **Metro Wash Pros**, a residential
+and commercial pressure washing company. Design direction: **Industrial
+Editorial** — dark, geometric, high-contrast, closer to an architecture
+magazine than a typical local-service flyer.
 
-> This is a **marketplace UI mockup**. By design it shows platform visuals,
-> categories, seller cards, and trust elements only — **no products, product
-> cards, or product imagery**.
+> Tagline: *"Professional Clean. Strong Results."*
 
 ## Preview
 
-Open `index.html` in any modern browser — no build step or dependencies
-required. Everything is plain HTML, CSS, and a small amount of vanilla JS.
+Plain HTML, CSS, and vanilla JS — no build step or dependencies.
 
 ```bash
-# from the project root
 open index.html          # macOS
 xdg-open index.html      # Linux
 start index.html         # Windows
@@ -24,53 +19,73 @@ start index.html         # Windows
 
 ## Sections
 
-| # | Section | Highlights |
-|---|---------|-----------|
-| 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
-| 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
-| 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
-| 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
-| 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
-| 6 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
-| 7 | **Testimonials** | Three modern review cards with avatars |
-| 8 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
-| 9 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
+| # | Section | Notes |
+|---|---------|-------|
+| — | **Nav** | Fixed; transparent over hero, fades to solid Ink Navy on scroll. Persistent "Free Estimate" button, collapses to an icon-triggered mobile menu. |
+| — | **Hero** | Full-bleed dark navy with an art-directed SVG scene (city skyline + spray fan) — no stock photography. Single primary CTA with a small signature droplet animation. |
+| 01 | **About** | Editorial two-column: standards/guarantee copy + three large-numeral stat callouts. |
+| 02 | **Services** | Asymmetric dark grid, six numbered services with line icons. |
+| 03 | **Pricing** | Three tiers, "Signature" flagged as Most Requested using the one Signal Blue accent. |
+| 04 | **Hours & Contact** | Day-by-day table (today's row auto-highlighted), phone/email/service area. |
+| 05 | **Free Estimate** | Form (Name, Phone, Email, Address, Service, Details) + reassurance copy. Client-side only — no backend is wired up. |
+| — | **Footer** | Quiet logo mark, nav recap, hours recap, contact, social, copyright. |
 
 ## Design system
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| Primary | `#2563EB` | Premium blue — CTAs, links, accents |
-| Secondary | `#7C3AED` | Modern purple — gradients, highlights |
-| Accent | `#06B6D4` | Cyan — status, secondary highlights |
-| Dark text | `#111827` | Headings, body |
-| Gray text | `#6B7280` | Secondary copy |
-| Background | `#F8FAFC` | Page background |
-| Cards | `#FFFFFF` | Surfaces |
-| Borders | `#E5E7EB` | Dividers, outlines |
+| Ink Navy | `#0A1128` | Dominant background, primary text on light sections |
+| Deep Blue | `#1E5AA8` | Structural accent — dividers, borders |
+| Signal Blue | `#2E9BF5` | The one "electric" accent — CTAs, links, key numbers only |
+| Off-White | `#F4F6F8` | Light section backgrounds, body text on dark |
+| Steel Gray | `#8A94A6` | Muted text, captions, secondary info |
 
-- **Type:** Plus Jakarta Sans (display) + Inter (body)
-- **Corners:** 12–28px rounded radii
-- **Elevation:** layered soft shadows
-- **Motion:** reveal-on-scroll, animated stat counters, floating hero cards,
-  gradient hovers — all disabled automatically under
-  `prefers-reduced-motion`.
+- **Display type:** Bebas Neue, extreme scale for headlines
+- **Body/UI type:** Space Grotesk
+- **Motion:** short (300–500ms), decelerating ease, staggered scroll reveals,
+  understated hover states, one signature droplet animation on the hero CTA —
+  all disabled under `prefers-reduced-motion`.
 
 ## Files
 
 ```
-index.html    # markup for all nine sections
-styles.css    # design system + component styles + responsive rules
-script.js     # sticky nav, mobile menu, scroll reveals, stat counters
+index.html          # markup for all sections
+styles.css           # design tokens + component styles + responsive rules
+script.js            # nav scroll state, mobile menu, scroll reveals, form handling
+assets/
+  favicon.svg         # vector logomark (nav/footer/favicon source)
+  favicon-32.png       # rasterized favicon
+  apple-touch-icon.png # iOS home-screen icon
+  og-cover.svg / .png  # Open Graph / social share image
 ```
 
-## Responsiveness & accessibility
+## Notes for going live
 
-- Fluid layout from large desktop down to small phones (4 → 2 → 1 column grids).
-- Glassmorphism navbar collapses to an accessible mobile menu.
-- Semantic landmarks, `aria-label`s, keyboard-focusable controls, visible
-  focus rings, and reduced-motion support.
+- **Logo:** the nav/footer mark is an original vector recreation inspired by
+  the supplied logomark (city skyline + spray), since the source raster
+  wasn't accessible as a file in this environment. Drop a cropped PNG/SVG of
+  the real logo into `assets/` and swap the `<svg><use href="#logomark"/>`
+  references in `index.html` for an `<img>` tag if you'd like the exact
+  artwork instead.
+- **Placeholder business info:** phone `(312) 555-0148`, email
+  `hello@metrowashpros.com`, and the service-area radius are placeholders —
+  replace with real details before launch.
+- **Imagery:** the hero uses an art-directed SVG scene rather than a
+  photograph. Swap in real commissioned photography (dark-graded to match the
+  navy palette) behind `.hero-art` in `styles.css` / `index.html` for an even
+  stronger result.
+- **Form:** `estimate` form shows a client-side confirmation message on
+  submit; wire `script.js`'s submit handler up to a real endpoint
+  (email service, form backend, CRM) before launch.
+
+## Accessibility & performance
+
+- Semantic HTML5 landmarks (`nav`, `main`, `section`, `footer`), correct
+  heading hierarchy.
+- WCAG AA contrast on all text/background pairs.
+- Full keyboard navigability with visible focus states.
+- No external JS libraries; two Google Fonts requests; vector-only imagery.
 
 ---
 
-© 2026 Global Market. Mockup for demonstration purposes.
+© 2026 Metro Wash Pros. Mockup for demonstration purposes.

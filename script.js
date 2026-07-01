@@ -1,108 +1,97 @@
 /* =========================================================
-   Global Market — interactions
+   Metro Wash Pros — interactions
    ========================================================= */
 (function () {
   "use strict";
 
-  /* ---- Sticky navbar shadow on scroll ---- */
-  const navbar = document.getElementById("navbar");
-  const onScroll = () => {
-    if (window.scrollY > 8) navbar.classList.add("scrolled");
-    else navbar.classList.remove("scrolled");
+  /* ---- Nav: transparent-over-hero -> solid on scroll ---- */
+  const nav = document.getElementById("siteNav");
+  const setNavState = () => {
+    nav.classList.toggle("is-scrolled", window.scrollY > 24);
   };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  setNavState();
+  window.addEventListener("scroll", setNavState, { passive: true });
 
-  /* ---- Mobile menu toggle ---- */
-  const toggle = document.getElementById("navToggle");
-  const links = document.querySelector(".nav-links");
-  if (toggle && links) {
-    toggle.addEventListener("click", () => {
-      const open = links.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-    links.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        links.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-      })
-    );
-  }
+  /* ---- Mobile menu ---- */
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  /* ---- Reveal-on-scroll ---- */
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const closeMenu = () => {
+    mobileMenu.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open menu");
+    document.body.style.overflow = "";
+  };
+  const openMenu = () => {
+    mobileMenu.classList.add("is-open");
+    navToggle.setAttribute("aria-expanded", "true");
+    navToggle.setAttribute("aria-label", "Close menu");
+    document.body.style.overflow = "hidden";
+  };
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.contains("is-open");
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  mobileMenu.querySelectorAll("[data-menu-link]").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) closeMenu();
+  });
+
+  /* ---- Scroll reveal (staggered, subtle) ---- */
   const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const groups = new Map();
+    revealEls.forEach((el) => {
+      const parent = el.parentElement;
+      if (!groups.has(parent)) groups.set(parent, []);
+      groups.get(parent).push(el);
+    });
 
-  if (reduce || !("IntersectionObserver" in window)) {
-    revealEls.forEach((el) => el.classList.add("in"));
-  } else {
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            // gentle stagger for siblings in the same grid
-            const delay = entry.target.dataset.delay || (i % 4) * 80;
-            setTimeout(() => entry.target.classList.add("in"), delay);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach((el) => io.observe(el));
-  }
-
-  /* ---- Animated stat counters ---- */
-  const formatValue = (value, suffix, format) => {
-    let out;
-    if (format === "M") out = (value / 1_000_000).toFixed(value % 1_000_000 === 0 ? 0 : 1) + "M";
-    else if (format === "K") out = Math.round(value / 1000) + "K";
-    else out = Math.round(value).toLocaleString("en-US");
-    return out + (suffix || "");
-  };
-
-  const animateCount = (el) => {
-    const target = parseFloat(el.dataset.target);
-    const suffix = el.dataset.suffix || "";
-    const format = el.dataset.format || "";
-    const duration = 1600;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-      el.textContent = formatValue(target * eased, suffix, format);
-      if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = formatValue(target, suffix, format);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  const statNums = document.querySelectorAll(".stat-num");
-  if (reduce || !("IntersectionObserver" in window)) {
-    statNums.forEach((el) =>
-      (el.textContent = formatValue(
-        parseFloat(el.dataset.target),
-        el.dataset.suffix || "",
-        el.dataset.format || ""
-      ))
-    );
-  } else {
-    const statIO = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCount(entry.target);
-            obs.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          const siblings = groups.get(entry.target.parentElement) || [entry.target];
+          const index = siblings.indexOf(entry.target);
+          const delay = Math.max(0, index) * 90;
+          entry.target.style.transitionDelay = `${delay}ms`;
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
     );
-    statNums.forEach((el) => statIO.observe(el));
+
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---- Year in footer ---- */
-  const yearEl = document.querySelector("[data-year]");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  /* ---- Highlight today's row in the hours table ---- */
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const today = dayNames[new Date().getDay()];
+  const todayRow = document.querySelector(`.hours-table tr[data-day="${today}"]`);
+  if (todayRow) todayRow.classList.add("is-today");
+
+  /* ---- Estimate form: client-side confirmation (no backend wired up) ---- */
+  const form = document.getElementById("estimateForm");
+  const success = document.getElementById("formSuccess");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      form.hidden = true;
+      success.classList.add("is-visible");
+      success.setAttribute("tabindex", "-1");
+      success.focus();
+    });
+  }
 })();
