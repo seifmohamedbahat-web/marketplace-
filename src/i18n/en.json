@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "startNow": "Start Now"
+  },
+  "hero": {
+    "title1": "We Build,",
+    "title2": "You Earn",
+    "subtitle": "We design & develop stunning websites, dashboards, and systems that drive real results for your business.",
+    "ctaPrimary": "Start Your Project",
+    "ctaSecondary": "See Our Work"
+  },
+  "services": {
+    "heading1": "What We",
+    "heading2": "Do",
+    "websites": { "title": "Websites", "desc": "Custom-designed, responsive websites that look stunning and convert visitors into customers. From landing pages to full e-commerce stores." },
+    "dashboards": { "title": "Dashboards", "desc": "Powerful, intuitive admin dashboards and analytics panels that give you full control over your business data and operations." },
+    "systems": { "title": "Systems", "desc": "Complete business systems including CRMs, booking systems, inventory management, and custom internal tools tailored to your workflow." }
+  },
+  "portfolio": {
+    "heading1": "Our",
+    "heading2": "Work",
+    "subtitle": "A glimpse at some of the projects we've brought to life.",
+    "learnMore": "Learn More",
+    "close": "Close",
+    "tech": "Tech Stack",
+    "projects": {
+      "luxe": { "name": "Luxe Boutique", "type": "Website", "desc": "A premium e-commerce website for a luxury fashion brand with seamless checkout and product filtering." },
+      "track": { "name": "TrackHub", "type": "Dashboard", "desc": "An analytics dashboard for a logistics company to track shipments, revenue, and fleet performance in real-time." },
+      "book": { "name": "BookEase", "type": "System", "desc": "A full appointment booking and management system for a chain of medical clinics with patient records integration." },
+      "flavor": { "name": "Flavor House", "type": "Website", "desc": "A modern restaurant website with online ordering, menu management, and table reservation features." },
+      "stock": { "name": "StockPilot", "type": "Dashboard", "desc": "An inventory management dashboard for a retail company with real-time stock alerts and supplier management." },
+      "hire": { "name": "HireFlow", "type": "System", "desc": "A recruitment management system with applicant tracking, interview scheduling, and team collaboration tools." }
+    }
+  },
+  "about": {
+    "heading1": "About",
+    "heading2": "Us",
+    "title": "A Team That Builds Digital Excellence",
+    "body": "We are a passionate team of developers, designers, and strategists dedicated to building digital products that don't just look good — they perform. We believe that every pixel, every line of code, and every user interaction matters. We've helped businesses across industries launch powerful websites, dashboards, and systems that drive growth and efficiency.",
+    "stats": {
+      "projects": "Projects Completed",
+      "clients": "Happy Clients",
+      "years": "Years of Experience",
+      "satisfaction": "Client Satisfaction"
+    }
+  },
+  "reviews": {
+    "heading1": "What Our",
+    "heading2": "Clients",
+    "heading3": "Say",
+    "items": [
+      { "quote": "Avexa completely transformed our online presence. The website they built for us is fast, beautiful, and our sales increased by 40% in the first month!", "name": "Sarah M.", "role": "CEO, Luxe Boutique" },
+      { "quote": "The dashboard they delivered was beyond what we imagined. Clean, intuitive, and exactly what our team needed. Highly recommend!", "name": "Ahmed K.", "role": "Operations Manager, TrackHub" },
+      { "quote": "Professional, responsive, and incredibly talented. They understood our vision from day one and delivered ahead of schedule.", "name": "Maria L.", "role": "Founder, BookEase" },
+      { "quote": "Working with Avexa was the best decision we made for our business. Their system saved us 20+ hours per week on manual tasks.", "name": "James T.", "role": "Director, HireFlow" },
+      { "quote": "Top-notch quality and amazing attention to detail. Avexa exceeded every expectation we had for our new website.", "name": "Layla H.", "role": "Marketing Director, Flavor House" },
+      { "quote": "Their team is creative, professional, and delivers ahead of schedule. We'll definitely work with them again on future projects.", "name": "Omar S.", "role": "CEO, StockPilot" }
+    ]
+  },
+  "cta": {
+    "heading": "Ready to Build Something Amazing?",
+    "subtext": "Let's turn your idea into a powerful digital product. Start your project today.",
+    "button": "Start Now",
+    "or": "Or contact us directly"
+  },
+  "footer": {
+    "tagline": "We Build, You Earn",
+    "rights": "© 2025 Avexa. All rights reserved."
+  },
+  "start": {
+    "progress": "Question {{current}} of {{total}}",
+    "next": "Next",
+    "back": "Back",
+    "submit": "Submit Project Request",
+    "review": "Review Your Answers",
+    "consent": "I agree to be contacted by Avexa regarding this project",
+    "q1": { "label": "What's your full name?", "placeholder": "John Doe" },
+    "q2": { "label": "What's your email address?", "placeholder": "you@example.com" },
+    "q3": { "label": "What's your phone number?", "placeholder": "+1 555 000 0000", "optional": "(optional)" },
+    "q4": { "label": "What's your brand or company name?", "placeholder": "Acme Inc." },
+    "q5": { "label": "What service do you need?", "hint": "Select all that apply", "website": "Website", "dashboard": "Dashboard", "system": "System" },
+    "q6": { "label": "How many pages or screens do you need?" },
+    "q7": { "label": "Tell us about your project", "placeholder": "Describe your project, goals, and any specific features you need..." },
+    "labels": {
+      "name": "Name", "email": "Email", "phone": "Phone", "company": "Brand/Company",
+      "service": "Service", "pages": "Pages", "description": "Description"
+    }
+  },
+  "thanks": {
+    "title": "Thank You",
+    "subtitle": "Your project request has been received. Our team will review your details and get back to you within 24 hours.",
+    "back": "Back to Home",
+    "questions": "Have questions? Contact us at"
+  },
+  "contact": {
+    "heading1": "Get in",
+    "heading2": "Touch",
+    "subtitle": "Have a question, feedback, or just want to say hello? We'd love to hear from you.",
+    "form": {
+      "name": "Full Name", "email": "Email", "phone": "Phone (optional)",
+      "subject": "Subject", "message": "Message", "send": "Send Message",
+      "success": "Message sent successfully! We'll get back to you soon.",
+      "error": "Could not send. Please try again or contact us directly."
+    }
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Please enter a valid email"
+  }
+}

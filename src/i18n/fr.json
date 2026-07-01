@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "startNow": "Commencer"
+  },
+  "hero": {
+    "title1": "Nous Construisons,",
+    "title2": "Vous Gagnez",
+    "subtitle": "Nous concevons et développons des sites web, tableaux de bord et systèmes époustouflants qui génèrent des résultats concrets pour votre entreprise.",
+    "ctaPrimary": "Démarrer Votre Projet",
+    "ctaSecondary": "Voir Nos Réalisations"
+  },
+  "services": {
+    "heading1": "Ce Que Nous",
+    "heading2": "Faisons",
+    "websites": { "title": "Sites Web", "desc": "Des sites web sur mesure, responsives et superbes qui convertissent vos visiteurs en clients. De la landing page au e-commerce complet." },
+    "dashboards": { "title": "Tableaux de Bord", "desc": "Des tableaux de bord administratifs puissants et intuitifs qui vous donnent un contrôle total sur vos données et opérations." },
+    "systems": { "title": "Systèmes", "desc": "Des systèmes métiers complets incluant CRM, réservations, gestion de stock et outils internes sur mesure adaptés à votre flux de travail." }
+  },
+  "portfolio": {
+    "heading1": "Notre",
+    "heading2": "Travail",
+    "subtitle": "Un aperçu de quelques projets que nous avons donné vie.",
+    "learnMore": "En Savoir Plus",
+    "close": "Fermer",
+    "tech": "Technologies",
+    "projects": {
+      "luxe": { "name": "Luxe Boutique", "type": "Site Web", "desc": "Un site e-commerce premium pour une marque de mode de luxe avec paiement fluide et filtrage de produits." },
+      "track": { "name": "TrackHub", "type": "Tableau de Bord", "desc": "Un tableau de bord analytique pour une société logistique pour suivre les expéditions, revenus et performances de flotte en temps réel." },
+      "book": { "name": "BookEase", "type": "Système", "desc": "Un système complet de réservation et gestion de rendez-vous pour une chaîne de cliniques médicales avec dossiers patients intégrés." },
+      "flavor": { "name": "Flavor House", "type": "Site Web", "desc": "Un site web de restaurant moderne avec commande en ligne, gestion de menu et réservation de tables." },
+      "stock": { "name": "StockPilot", "type": "Tableau de Bord", "desc": "Un tableau de bord de gestion d'inventaire avec alertes de stock en temps réel et gestion des fournisseurs." },
+      "hire": { "name": "HireFlow", "type": "Système", "desc": "Un système de gestion de recrutement avec suivi des candidats, planification d'entretiens et collaboration d'équipe." }
+    }
+  },
+  "about": {
+    "heading1": "À Propos de",
+    "heading2": "Nous",
+    "title": "Une Équipe Qui Construit l'Excellence Numérique",
+    "body": "Nous sommes une équipe passionnée de développeurs, designers et stratèges dédiés à la création de produits numériques qui non seulement sont beaux — mais qui performent. Nous croyons que chaque pixel, chaque ligne de code et chaque interaction utilisateur compte. Nous avons aidé des entreprises de tous secteurs à lancer des sites web, tableaux de bord et systèmes puissants qui stimulent la croissance et l'efficacité.",
+    "stats": {
+      "projects": "Projets Réalisés",
+      "clients": "Clients Satisfaits",
+      "years": "Années d'Expérience",
+      "satisfaction": "Satisfaction Client"
+    }
+  },
+  "reviews": {
+    "heading1": "Ce Que Disent Nos",
+    "heading2": "Clients",
+    "heading3": "",
+    "items": [
+      { "quote": "Avexa a complètement transformé notre présence en ligne. Le site est rapide, magnifique et nos ventes ont augmenté de 40% le premier mois !", "name": "Sarah M.", "role": "PDG, Luxe Boutique" },
+      { "quote": "Le tableau de bord livré dépasse ce que nous imaginions. Propre, intuitif, exactement ce dont notre équipe avait besoin. Hautement recommandé !", "name": "Ahmed K.", "role": "Directeur des Opérations, TrackHub" },
+      { "quote": "Professionnels, réactifs et incroyablement talentueux. Ils ont compris notre vision dès le premier jour et livré en avance.", "name": "Maria L.", "role": "Fondatrice, BookEase" },
+      { "quote": "Travailler avec Avexa a été la meilleure décision pour notre entreprise. Leur système nous a fait gagner plus de 20h par semaine.", "name": "James T.", "role": "Directeur, HireFlow" },
+      { "quote": "Qualité haut de gamme et attention incroyable au détail. Avexa a dépassé toutes nos attentes pour notre nouveau site.", "name": "Layla H.", "role": "Directrice Marketing, Flavor House" },
+      { "quote": "Leur équipe est créative, professionnelle et livre en avance. Nous travaillerons à nouveau avec eux sur nos futurs projets.", "name": "Omar S.", "role": "PDG, StockPilot" }
+    ]
+  },
+  "cta": {
+    "heading": "Prêt à Construire Quelque Chose d'Incroyable ?",
+    "subtext": "Transformons votre idée en un produit numérique puissant. Lancez votre projet aujourd'hui.",
+    "button": "Commencer",
+    "or": "Ou contactez-nous directement"
+  },
+  "footer": {
+    "tagline": "Nous Construisons, Vous Gagnez",
+    "rights": "© 2025 Avexa. Tous droits réservés."
+  },
+  "start": {
+    "progress": "Question {{current}} sur {{total}}",
+    "next": "Suivant",
+    "back": "Retour",
+    "submit": "Envoyer la Demande de Projet",
+    "review": "Vérifiez Vos Réponses",
+    "consent": "J'accepte d'être contacté par Avexa concernant ce projet",
+    "q1": { "label": "Quel est votre nom complet ?", "placeholder": "Jean Dupont" },
+    "q2": { "label": "Quelle est votre adresse email ?", "placeholder": "vous@exemple.com" },
+    "q3": { "label": "Quel est votre numéro de téléphone ?", "placeholder": "+33 1 23 45 67 89", "optional": "(optionnel)" },
+    "q4": { "label": "Quel est le nom de votre marque ou entreprise ?", "placeholder": "Acme Inc." },
+    "q5": { "label": "Quels services vous faut-il ?", "hint": "Sélectionnez tout ce qui s'applique", "website": "Site Web", "dashboard": "Tableau de Bord", "system": "Système" },
+    "q6": { "label": "Combien de pages ou écrans avez-vous besoin ?" },
+    "q7": { "label": "Parlez-nous de votre projet", "placeholder": "Décrivez votre projet, vos objectifs et les fonctionnalités spécifiques dont vous avez besoin..." },
+    "labels": {
+      "name": "Nom", "email": "Email", "phone": "Téléphone", "company": "Marque/Entreprise",
+      "service": "Service", "pages": "Pages", "description": "Description"
+    }
+  },
+  "thanks": {
+    "title": "Merci",
+    "subtitle": "Votre demande de projet a bien été reçue. Notre équipe examinera vos détails et vous répondra sous 24 heures.",
+    "back": "Retour à l'Accueil",
+    "questions": "Des questions ? Contactez-nous à"
+  },
+  "contact": {
+    "heading1": "Restons en",
+    "heading2": "Contact",
+    "subtitle": "Une question, un retour ou simplement envie de dire bonjour ? Nous serions ravis d'avoir de vos nouvelles.",
+    "form": {
+      "name": "Nom Complet", "email": "Email", "phone": "Téléphone (optionnel)",
+      "subject": "Sujet", "message": "Message", "send": "Envoyer le Message",
+      "success": "Message envoyé avec succès ! Nous vous répondrons bientôt.",
+      "error": "Échec de l'envoi. Veuillez réessayer ou nous contacter directement."
+    }
+  },
+  "validation": {
+    "required": "Ce champ est requis",
+    "email": "Veuillez entrer un email valide"
+  }
+}
