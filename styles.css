@@ -56,6 +56,7 @@ body {
   color: var(--ink-navy);
   font-family: var(--font-body);
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -104,7 +105,7 @@ select:focus-visible {
   align-items: center;
   gap: 0.6em;
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -128,6 +129,7 @@ select:focus-visible {
 .section-title {
   font-family: var(--font-display);
   font-weight: 400;
+  -webkit-text-stroke: 0.7px currentColor;
   letter-spacing: 0.01em;
   line-height: 0.96;
   font-size: clamp(2.6rem, 5.2vw, 4.2rem);
@@ -165,15 +167,16 @@ select:focus-visible {
   background: var(--signal-blue);
   color: var(--ink-navy);
 }
-.btn-primary:hover { background: #58AEF7; transform: translateY(-2px); }
-.btn-primary:active { transform: translateY(0); }
+.btn-primary:hover { background: #58AEF7; transform: translateY(-2px) scale(1.03); }
+.btn-primary:active { transform: translateY(0) scale(0.98); }
 
 .btn-outline-dark {
   background: transparent;
   border-color: var(--deep-blue);
   color: var(--ink-navy);
 }
-.btn-outline-dark:hover { border-color: var(--ink-navy); transform: translateY(-2px); }
+.btn-outline-dark:hover { border-color: var(--ink-navy); transform: translateY(-2px) scale(1.03); }
+.btn-outline-dark:active { transform: translateY(0) scale(0.98); }
 
 .btn-block { width: 100%; }
 
@@ -230,7 +233,7 @@ select:focus-visible {
 }
 .nav-links a {
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.02em;
   color: #C9CFDA;
   position: relative;
@@ -296,6 +299,23 @@ select:focus-visible {
 }
 .hero-art svg { width: 100%; height: 100%; }
 
+@keyframes dropFall {
+  0% { transform: translateY(-10px); opacity: 0; }
+  20% { opacity: 1; }
+  75% { opacity: 0.5; }
+  100% { transform: translateY(22px); opacity: 0; }
+}
+.hero-art .drop circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: dropFall 2.8s ease-in infinite;
+}
+.hero-art .drop circle:nth-child(1) { animation-delay: 0s; }
+.hero-art .drop circle:nth-child(2) { animation-delay: 0.5s; }
+.hero-art .drop circle:nth-child(3) { animation-delay: 1s; }
+.hero-art .drop circle:nth-child(4) { animation-delay: 1.5s; }
+.hero-art .drop circle:nth-child(5) { animation-delay: 2s; }
+
 .hero-veil {
   position: absolute;
   inset: 0;
@@ -312,12 +332,25 @@ select:focus-visible {
   width: 100%;
 }
 
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow, .hero-title, .hero-sub, .hero-actions, .hero-strip {
+  animation: heroRise 0.9s var(--ease-out) both;
+}
+.hero-eyebrow { animation-delay: 0.05s; }
+.hero-title { animation-delay: 0.18s; }
+.hero-sub { animation-delay: 0.36s; }
+.hero-actions { animation-delay: 0.52s; }
+.hero-strip { animation-delay: 0.68s; }
+
 .hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--steel-gray);
@@ -332,6 +365,7 @@ select:focus-visible {
 .hero-title {
   font-family: var(--font-display);
   font-weight: 400;
+  -webkit-text-stroke: 1.4px currentColor;
   text-transform: uppercase;
   color: var(--off-white);
   font-size: clamp(3.2rem, 9.5vw, 7.5rem);
@@ -403,6 +437,7 @@ select:focus-visible {
   font-size: 1.5rem;
   letter-spacing: 0.02em;
   color: var(--off-white);
+  -webkit-text-stroke: 0.4px currentColor;
   transition: color var(--dur-1) var(--ease-out);
 }
 .hero-phone a:hover { color: var(--signal-blue); }
@@ -426,6 +461,7 @@ select:focus-visible {
   font-size: 1.9rem;
   color: var(--signal-blue);
   letter-spacing: 0.01em;
+  -webkit-text-stroke: 0.4px currentColor;
 }
 .hero-strip-item span {
   font-size: 0.78rem;
@@ -458,12 +494,12 @@ select:focus-visible {
    ========================================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(34px) scale(0.98);
   transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* ==========================================================================
@@ -488,7 +524,7 @@ select:focus-visible {
 .about-copy .lede {
   font-size: 1.3rem;
   color: var(--ink-navy);
-  font-weight: 500;
+  font-weight: 600;
   max-width: 30ch;
   margin-bottom: 1.5rem;
 }
@@ -504,6 +540,7 @@ select:focus-visible {
 .about-guarantee svg { flex-shrink: 0; color: var(--signal-blue); margin-top: 2px; }
 .about-guarantee h3 {
   font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
   margin-bottom: 0.3rem;
 }
@@ -524,6 +561,7 @@ select:focus-visible {
   line-height: 0.9;
   color: var(--ink-navy);
   letter-spacing: 0.01em;
+  -webkit-text-stroke: 0.6px currentColor;
 }
 .stat-num .unit { color: var(--signal-blue); }
 .stat-item p {
@@ -581,7 +619,9 @@ select:focus-visible {
   width: 30px; height: 30px;
   color: var(--signal-blue);
   flex-shrink: 0;
+  transition: transform 0.45s var(--ease-out);
 }
+.service-card:hover .service-icon { transform: scale(1.15) rotate(-6deg); }
 .service-card:nth-child(1) .service-icon,
 .service-card:nth-child(2) .service-icon { width: 42px; height: 42px; }
 
@@ -592,6 +632,7 @@ select:focus-visible {
   letter-spacing: 0.01em;
   font-size: clamp(1.5rem, 2vw, 2.1rem);
   line-height: 1;
+  -webkit-text-stroke: 0.5px currentColor;
 }
 .service-card:nth-child(1) .service-name,
 .service-card:nth-child(2) .service-name { font-size: clamp(1.9rem, 3vw, 2.9rem); }
@@ -639,6 +680,11 @@ select:focus-visible {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.45rem 0.9rem;
+  animation: flagPulse 2.6s ease-in-out infinite;
+}
+@keyframes flagPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46, 155, 245, 0.55); }
+  50% { box-shadow: 0 0 0 7px rgba(46, 155, 245, 0); }
 }
 .tier-name {
   font-family: var(--font-display);
@@ -646,6 +692,7 @@ select:focus-visible {
   font-size: 1.6rem;
   letter-spacing: 0.02em;
   margin-top: 0.5rem;
+  -webkit-text-stroke: 0.5px currentColor;
 }
 .tier-featured .tier-name { color: var(--off-white); }
 .tier-desc {
@@ -663,13 +710,14 @@ select:focus-visible {
   font-size: 2.6rem;
   color: var(--ink-navy);
   letter-spacing: 0.01em;
+  -webkit-text-stroke: 0.7px currentColor;
 }
 .tier-featured .tier-price { color: var(--signal-blue); border-top-color: rgba(138,148,166,0.3); }
 .tier-price span {
   font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--steel-gray-deep);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -735,7 +783,7 @@ select:focus-visible {
 }
 .hours-table th {
   color: var(--off-white);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.02em;
   width: 55%;
 }
@@ -764,8 +812,9 @@ select:focus-visible {
   font-size: clamp(1.4rem, 2vw, 1.9rem);
   color: var(--off-white);
   letter-spacing: 0.01em;
+  -webkit-text-stroke: 0.5px currentColor;
 }
-.contact-item p { font-family: var(--font-body); font-size: 1rem; color: #C9CFDA; max-width: 40ch; }
+.contact-item p { font-family: var(--font-body); font-size: 1rem; color: #C9CFDA; max-width: 40ch; -webkit-text-stroke: 0; }
 .contact-item a { transition: color var(--dur-1) var(--ease-out); }
 .contact-item a:hover { color: var(--signal-blue); }
 
@@ -858,7 +907,7 @@ select:focus-visible {
   color: var(--off-white);
   font-size: 1.2rem;
   max-width: 34ch;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -897,6 +946,7 @@ select:focus-visible {
 
 .footer-col h3 {
   font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--steel-gray);
@@ -974,6 +1024,7 @@ select:focus-visible {
     text-transform: uppercase;
     color: var(--off-white);
     letter-spacing: 0.01em;
+    -webkit-text-stroke: 0.6px currentColor;
     padding-block: 0.65rem;
     border-bottom: 1px solid rgba(138,148,166,0.2);
   }

@@ -72,6 +72,42 @@
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
+  /* ---- Animated count-up numbers ---- */
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const countEls = document.querySelectorAll("[data-count-to]");
+  const runCount = (el) => {
+    const target = parseInt(el.getAttribute("data-count-to"), 10);
+    if (prefersReducedMotion) {
+      el.textContent = target;
+      return;
+    }
+    const duration = 1300;
+    const start = performance.now();
+    const easeOutQuad = (t) => 1 - (1 - t) * (1 - t);
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(target * easeOutQuad(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  if ("IntersectionObserver" in window && countEls.length) {
+    const countObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          runCount(entry.target);
+          obs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    countEls.forEach((el) => countObserver.observe(el));
+  } else {
+    countEls.forEach((el) => { el.textContent = el.getAttribute("data-count-to"); });
+  }
+
   /* ---- Highlight today's row in the hours table ---- */
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const today = dayNames[new Date().getDay()];
