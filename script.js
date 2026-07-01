@@ -1,5 +1,5 @@
 /* =========================================================
-   Global Market — interactions
+   Metro Wash Pros — interactions
    ========================================================= */
 (function () {
   "use strict";
@@ -34,15 +34,14 @@
   const revealEls = document.querySelectorAll(".reveal");
 
   if (reduce || !("IntersectionObserver" in window)) {
-    revealEls.forEach((el) => el.classList.add("in"));
+    revealEls.forEach((el) => el.classList.add("in-view"));
   } else {
     const io = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry, i) => {
           if (entry.isIntersecting) {
-            // gentle stagger for siblings in the same grid
             const delay = entry.target.dataset.delay || (i % 4) * 80;
-            setTimeout(() => entry.target.classList.add("in"), delay);
+            setTimeout(() => entry.target.classList.add("in-view"), delay);
             obs.unobserve(entry.target);
           }
         });
@@ -52,57 +51,19 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
-  /* ---- Animated stat counters ---- */
-  const formatValue = (value, suffix, format) => {
-    let out;
-    if (format === "M") out = (value / 1_000_000).toFixed(value % 1_000_000 === 0 ? 0 : 1) + "M";
-    else if (format === "K") out = Math.round(value / 1000) + "K";
-    else out = Math.round(value).toLocaleString("en-US");
-    return out + (suffix || "");
-  };
-
-  const animateCount = (el) => {
-    const target = parseFloat(el.dataset.target);
-    const suffix = el.dataset.suffix || "";
-    const format = el.dataset.format || "";
-    const duration = 1600;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-      el.textContent = formatValue(target * eased, suffix, format);
-      if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = formatValue(target, suffix, format);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  const statNums = document.querySelectorAll(".stat-num");
-  if (reduce || !("IntersectionObserver" in window)) {
-    statNums.forEach((el) =>
-      (el.textContent = formatValue(
-        parseFloat(el.dataset.target),
-        el.dataset.suffix || "",
-        el.dataset.format || ""
-      ))
-    );
-  } else {
-    const statIO = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCount(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    statNums.forEach((el) => statIO.observe(el));
+  /* ---- Free estimate form ---- */
+  const form = document.getElementById("estimateForm");
+  const note = document.getElementById("formNote");
+  if (form && note) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const name = form.querySelector("#name").value.trim().split(" ")[0];
+      note.textContent = `Thanks${name ? ", " + name : ""}! Your estimate request has been received — we'll be in touch within one business day.`;
+      form.reset();
+    });
   }
-
-  /* ---- Year in footer ---- */
-  const yearEl = document.querySelector("[data-year]");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();

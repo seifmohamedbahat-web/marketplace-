@@ -1,14 +1,10 @@
-# Global Market — Premium Marketplace Homepage
+# Metro Wash Pros — Pressure Washing Homepage
 
-A high-end, fully responsive homepage mockup for **Global Market**, a global
-marketplace platform that connects buyers with custom product creators
-worldwide. Built to a premium startup standard — clean luxury aesthetic,
-soft shadows, rounded corners, spacious layout, and modern typography in the
-spirit of Shopify + Stripe + Airbnb.
-
-> This is a **marketplace UI mockup**. By design it shows platform visuals,
-> categories, seller cards, and trust elements only — **no products, product
-> cards, or product imagery**.
+A one-page marketing website for **Metro Wash Pros**, built to match the
+brand's logo colors (navy + bright blue) with a bold, professional feel.
+It's a single scrolling page with anchor navigation to an About Us section,
+Services, Prices, Business Hours, Testimonials, and a Free Estimate contact
+form.
 
 ## Preview
 
@@ -24,53 +20,66 @@ start index.html         # Windows
 
 ## Sections
 
-| # | Section | Highlights |
+| # | Section | What's in it |
 |---|---------|-----------|
-| 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
-| 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
-| 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
-| 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
-| 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
-| 6 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
-| 7 | **Testimonials** | Three modern review cards with avatars |
-| 8 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
-| 9 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
+| 1 | **Header** | Sticky navy navbar, brand lockup, nav links, click-to-call phone number, "Free Estimate" button |
+| 2 | **Hero** | Headline + dual CTAs (Free Estimate / Call Now) over a navy gradient, spray-graphic visual, trust badge strip |
+| 3 | **About Us** (`#about`) | Company story, mission, and a "why choose us" checklist |
+| 4 | **Services** (`#services`) | Driveway, house/siding, roof, deck/fence, commercial, gutter cleaning |
+| 5 | **Prices** (`#prices`) | Starting prices per service in card format, with a "Most Popular" highlight |
+| 6 | **Business Hours** (`#hours`) | Hours table (Mon–Fri / Sat / Sun) plus phone, email, and service area |
+| 7 | **Testimonials** | Three customer review cards |
+| 8 | **Free Estimate** (`#estimate`) | Contact form (name, phone, email, address, service, details) |
+| 9 | **Final CTA + Footer** | Closing call-to-action banner, footer with hours recap and quick links |
 
 ## Design system
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| Primary | `#2563EB` | Premium blue — CTAs, links, accents |
-| Secondary | `#7C3AED` | Modern purple — gradients, highlights |
-| Accent | `#06B6D4` | Cyan — status, secondary highlights |
-| Dark text | `#111827` | Headings, body |
-| Gray text | `#6B7280` | Secondary copy |
-| Background | `#F8FAFC` | Page background |
-| Cards | `#FFFFFF` | Surfaces |
-| Borders | `#E5E7EB` | Dividers, outlines |
+| Navy 950/900 | `#050b14` / `#0a1626` | Header, hero, dark sections, footer |
+| Blue 700/600/500 | `#0d5bc4` / `#1673e0` / `#2f8fef` | Primary buttons, links, accents |
+| Blue 400 | `#5fb2ff` | Highlights, icon accents |
+| Text dark | `#0b1420` | Headings, body copy |
+| Text gray | `#55677c` | Secondary copy |
+| Background | `#f7fafc` | Page background |
+| Cards | `#ffffff` | Surfaces |
 
-- **Type:** Plus Jakarta Sans (display) + Inter (body)
-- **Corners:** 12–28px rounded radii
-- **Elevation:** layered soft shadows
-- **Motion:** reveal-on-scroll, animated stat counters, floating hero cards,
-  gradient hovers — all disabled automatically under
-  `prefers-reduced-motion`.
+- **Type:** Oswald (bold condensed headings) + Inter (body)
+- **Corners:** 10–22px rounded radii
+- **Motion:** reveal-on-scroll, floating hero cards — disabled automatically
+  under `prefers-reduced-motion`.
 
 ## Files
 
 ```
-index.html    # markup for all nine sections
+index.html    # markup for all sections
 styles.css    # design system + component styles + responsive rules
-script.js     # sticky nav, mobile menu, scroll reveals, stat counters
+script.js     # sticky nav, mobile menu, scroll reveals, estimate form handling
 ```
+
+## Things to customize before going live
+
+- **Logo:** the header/footer currently use a hand-built icon + text lockup
+  in your brand colors. To use your actual logo artwork, drop an image file
+  (e.g. `logo.png`) into this folder and swap the `.brand-mark` SVG in
+  `index.html` for `<img src="logo.png" alt="Metro Wash Pros logo">`.
+- **Phone / email / address:** replace the placeholder `(555) 123-4567`,
+  `info@metrowashpros.com`, and "Greater Metro Area" text throughout
+  `index.html` with your real contact details.
+- **Prices & hours:** update the numbers in the Prices and Hours sections to
+  match your actual rates and schedule.
+- **Free Estimate form:** this is a static site, so the form currently shows
+  a confirmation message in the browser but doesn't send an email. To
+  actually receive submissions, connect it to a form backend such as
+  Formspree, Netlify Forms, or your own server endpoint.
 
 ## Responsiveness & accessibility
 
-- Fluid layout from large desktop down to small phones (4 → 2 → 1 column grids).
-- Glassmorphism navbar collapses to an accessible mobile menu.
-- Semantic landmarks, `aria-label`s, keyboard-focusable controls, visible
-  focus rings, and reduced-motion support.
+- Fluid layout from desktop down to small phones (3 → 2 → 1 column grids).
+- Sticky navbar collapses to an accessible slide-in mobile menu.
+- Semantic landmarks, `aria-label`s, keyboard-focusable controls, and
+  reduced-motion support.
 
 ---
 
-© 2026 Global Market. Mockup for demonstration purposes.
+© 2026 Metro Wash Pros. Mockup for demonstration purposes.
