@@ -268,9 +268,7 @@ input, select, textarea { font: inherit; }
 /* Hero visual */
 .hero-visual { position: relative; }
 .spray-wrap { position: relative; max-width: 480px; margin: 0 auto; }
-.spray-ring { width: 100%; height: auto; }
-.orbit { animation: spin 40s linear infinite; transform-origin: 260px 260px; }
-@keyframes spin { to { transform: rotate(360deg); } }
+.logo-badge { width: 100%; height: auto; }
 .dots circle { animation: pulseDot 1.6s ease-in-out infinite; }
 .dots circle:nth-child(2n) { animation-delay: 0.3s; }
 .dots circle:nth-child(3n) { animation-delay: 0.6s; }
@@ -289,7 +287,7 @@ input, select, textarea { font: inherit; }
 .fc-rating { top: 6%; left: -4%; }
 .fc-rating-top { display: flex; align-items: center; gap: 8px; font-weight: 700; }
 .fc-rating-sub { font-size: 0.72rem; color: var(--text-gray-light); margin-top: 2px; }
-.fc-badge { bottom: 10%; right: -6%; display: flex; align-items: center; gap: 10px; max-width: 220px; }
+.fc-badge { top: 34%; right: -9%; display: flex; align-items: center; gap: 10px; max-width: 220px; }
 .fc-badge-icon { width: 32px; height: 32px; border-radius: 9px; background: rgba(47, 143, 239, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .fc-badge-title { font-size: 0.78rem; font-weight: 700; }
 .fc-badge-sub { font-size: 0.68rem; color: var(--text-gray-light); }
