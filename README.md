@@ -1,76 +1,53 @@
-# Global Market — Premium Marketplace Homepage
+# Avexa — Web Agency Site
 
-A high-end, fully responsive homepage mockup for **Global Market**, a global
-marketplace platform that connects buyers with custom product creators
-worldwide. Built to a premium startup standard — clean luxury aesthetic,
-soft shadows, rounded corners, spacious layout, and modern typography in the
-spirit of Shopify + Stripe + Airbnb.
+A TanStack Start (React 19 + Vite + Nitro) marketing site for Avexa, a web
+development agency. Includes a portfolio, testimonials, i18n (EN/FR/AR), and
+a contact form that submits via [Web3Forms](https://web3forms.com).
 
-> This is a **marketplace UI mockup**. By design it shows platform visuals,
-> categories, seller cards, and trust elements only — **no products, product
-> cards, or product imagery**.
-
-## Preview
-
-Open `index.html` in any modern browser — no build step or dependencies
-required. Everything is plain HTML, CSS, and a small amount of vanilla JS.
+## Local development
 
 ```bash
-# from the project root
-open index.html          # macOS
-xdg-open index.html      # Linux
-start index.html         # Windows
+bun install
+bun run dev
 ```
 
-## Sections
+## Deploying to Vercel (free)
 
-| # | Section | Highlights |
-|---|---------|-----------|
-| 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
-| 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
-| 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
-| 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
-| 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
-| 6 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
-| 7 | **Testimonials** | Three modern review cards with avatars |
-| 8 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
-| 9 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
+This repo is pre-configured for Vercel: `vite.config.ts` sets the Nitro
+build preset to `"vercel"`, which emits Vercel's Build Output API v3 at
+`.vercel/output` during `bun run build`.
 
-## Design system
+1. Go to [vercel.com](https://vercel.com) and sign in (GitHub login works).
+2. **Add New... → Project**, then import this GitHub repository.
+3. Framework Preset: choose **Other**.
+4. Install Command: `bun install` (auto-detected from `bun.lock`).
+5. Build Command: `bun run build`.
+6. Output Directory: leave as default — Vercel auto-detects `.vercel/output`.
+7. Add the environment variables below, then click **Deploy**.
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| Primary | `#2563EB` | Premium blue — CTAs, links, accents |
-| Secondary | `#7C3AED` | Modern purple — gradients, highlights |
-| Accent | `#06B6D4` | Cyan — status, secondary highlights |
-| Dark text | `#111827` | Headings, body |
-| Gray text | `#6B7280` | Secondary copy |
-| Background | `#F8FAFC` | Page background |
-| Cards | `#FFFFFF` | Surfaces |
-| Borders | `#E5E7EB` | Dividers, outlines |
+### Environment variables
 
-- **Type:** Plus Jakarta Sans (display) + Inter (body)
-- **Corners:** 12–28px rounded radii
-- **Elevation:** layered soft shadows
-- **Motion:** reveal-on-scroll, animated stat counters, floating hero cards,
-  gradient hovers — all disabled automatically under
-  `prefers-reduced-motion`.
+Copy the values from `.env.example` (or your own Supabase project) into the
+Vercel project's **Settings → Environment Variables**:
+
+| Name | Notes |
+|------|-------|
+| `VITE_SUPABASE_URL` | Supabase project URL (public) |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable/anon key (public) |
+| `VITE_SUPABASE_PROJECT_ID` | Supabase project ref |
+| `SUPABASE_URL` | Same value, read on the server |
+| `SUPABASE_PUBLISHABLE_KEY` | Same value, read on the server |
+| `SUPABASE_PROJECT_ID` | Same value, read on the server |
+
+These are Supabase *publishable* keys, safe to expose client-side — the
+Supabase integration isn't currently wired into any page, so the site works
+without them, but set them to avoid console errors if that changes.
 
 ## Files
 
 ```
-index.html    # markup for all nine sections
-styles.css    # design system + component styles + responsive rules
-script.js     # sticky nav, mobile menu, scroll reveals, stat counters
+src/routes/        # pages: /, /start, /contact, /thank-you
+src/components/    # Nav, Footer, Portfolio, TestimonialsCarousel, etc.
+src/i18n/          # en.json, fr.json, ar.json
+src/lib/sendForm.ts  # contact form submission via Web3Forms
 ```
-
-## Responsiveness & accessibility
-
-- Fluid layout from large desktop down to small phones (4 → 2 → 1 column grids).
-- Glassmorphism navbar collapses to an accessible mobile menu.
-- Semantic landmarks, `aria-label`s, keyboard-focusable controls, visible
-  focus rings, and reduced-motion support.
-
----
-
-© 2026 Global Market. Mockup for demonstration purposes.
