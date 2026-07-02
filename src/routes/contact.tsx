@@ -53,7 +53,7 @@ function ContactPage() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mb-16"
         >
-          <h1 className="font-heading font-black uppercase text-5xl md:text-6xl leading-none">
+          <h1 className="font-display font-black uppercase text-5xl md:text-6xl leading-none">
             {t("contact.heading")}
           </h1>
           <p className="mt-5 text-white/70 text-lg">{t("contact.subline")}</p>
@@ -143,7 +143,7 @@ function ContactPage() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="animate-pulse-red flex items-center justify-center gap-2 border border-brand bg-brand px-8 py-4 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
+              className="animate-pulse-red flex items-center justify-center gap-2 border border-brand bg-brand px-8 py-4 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
             >
               {status === "sending" && <Loader2 size={16} className="animate-spin" />}
               {status === "sending" ? t("contact.sending") : t("contact.send")}
@@ -156,7 +156,7 @@ function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="border border-white/10 p-8 h-fit"
           >
-            <h2 className="font-heading uppercase tracking-widest text-sm text-white/50 mb-4">
+            <h2 className="font-display uppercase tracking-widest text-sm text-white/50 mb-4">
               {t("contact.infoHeading")}
             </h2>
             <p className="text-white/60 text-sm leading-relaxed mb-6">{t("contact.infoBlurb")}</p>

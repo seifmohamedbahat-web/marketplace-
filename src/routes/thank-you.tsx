@@ -19,7 +19,7 @@ function ThankYouPage() {
         transition={{ duration: 0.6 }}
         className="relative z-10 mx-auto max-w-2xl px-5 md:px-8 text-center"
       >
-        <h1 className="font-heading font-black uppercase text-6xl md:text-8xl leading-none text-white">
+        <h1 className="font-display font-black uppercase text-6xl md:text-8xl leading-none text-white">
           {t("thankYou.heading")}
         </h1>
         <p className="mt-8 text-lg md:text-xl text-white/70 leading-relaxed">
@@ -27,7 +27,7 @@ function ThankYouPage() {
         </p>
         <Link
           to="/"
-          className="mt-10 inline-block animate-pulse-red border border-brand bg-brand px-8 py-4 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
+          className="mt-10 inline-block animate-pulse-red border border-brand bg-brand px-8 py-4 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
         >
           {t("thankYou.back")}
         </Link>

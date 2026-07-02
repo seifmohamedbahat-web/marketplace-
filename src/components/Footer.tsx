@@ -14,7 +14,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 md:px-8 py-16 grid grid-cols-1 sm:grid-cols-3 gap-12">
         <div>
           <Logo size="footer" />
-          <p className="mt-4 font-heading uppercase tracking-widest text-sm text-accent-x">
+          <p className="mt-4 font-display uppercase tracking-widest text-sm text-accent-x">
             {t("footer.tagline")}
           </p>
           <p className="mt-3 text-white/60 text-sm leading-relaxed max-w-xs">
@@ -23,7 +23,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-heading uppercase tracking-widest text-sm text-white/50 mb-5">
+          <h3 className="font-display uppercase tracking-widest text-sm text-white/50 mb-5">
             {t("footer.quickLinks")}
           </h3>
           <ul className="space-y-3">
@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-heading uppercase tracking-widest text-sm text-white/50 mb-5">
+          <h3 className="font-display uppercase tracking-widest text-sm text-white/50 mb-5">
             {t("footer.contact")}
           </h3>
           <a

@@ -15,7 +15,7 @@ export function CTA() {
           transition={{ duration: 0.6 }}
           className="red-glow border border-brand bg-black px-6 py-16 md:py-20 text-center"
         >
-          <h2 className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
             {t("finalCta.heading")}
           </h2>
           <p className="mt-5 text-white/70 text-lg max-w-xl mx-auto">
@@ -24,13 +24,13 @@ export function CTA() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/start"
-              className="animate-pulse-red w-full sm:w-auto border border-brand bg-brand px-8 py-4 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
+              className="animate-pulse-red w-full sm:w-auto border border-brand bg-brand px-8 py-4 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
             >
               {t("finalCta.primary")}
             </Link>
             <Link
               to="/contact"
-              className="w-full sm:w-auto border border-white px-8 py-4 font-heading text-sm uppercase tracking-widest text-white transition-all hover:scale-105 hover:border-brand hover:text-accent-x"
+              className="w-full sm:w-auto border border-white px-8 py-4 font-display text-sm uppercase tracking-widest text-white transition-all hover:scale-105 hover:border-brand hover:text-accent-x"
             >
               {t("finalCta.secondary")}
             </Link>

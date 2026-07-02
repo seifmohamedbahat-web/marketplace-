@@ -7,7 +7,7 @@ export function ProgressBar({ current, total }: { current: number; total: number
 
   return (
     <div className="w-full">
-      <p className="font-heading uppercase tracking-widest text-xs text-white/50 mb-3">
+      <p className="font-display uppercase tracking-widest text-xs text-white/50 mb-3">
         {t("wizard.progress", { current, total })}
       </p>
       <div className="h-1 w-full bg-white/10">

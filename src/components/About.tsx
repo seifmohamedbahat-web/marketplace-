@@ -32,7 +32,7 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 
   return (
     <div ref={ref} className="text-center">
-      <p className="font-heading font-black text-5xl md:text-6xl text-accent-x">
+      <p className="font-display font-black text-5xl md:text-6xl text-accent-x">
         {count}
         {suffix}
       </p>
@@ -52,7 +52,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight"
+          className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight"
         >
           {t("about.heading")}
         </motion.h2>

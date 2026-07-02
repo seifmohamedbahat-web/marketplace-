@@ -134,7 +134,7 @@ function StartPage() {
     <section className="relative min-h-screen bg-black pt-32 pb-24 md:pt-40">
       <div className="mx-auto max-w-2xl px-5 md:px-8">
         {step === 0 && (
-          <p className="mb-8 text-center font-heading uppercase tracking-widest text-sm text-accent-x">
+          <p className="mb-8 text-center font-display uppercase tracking-widest text-sm text-accent-x">
             {t("wizard.intro")}
           </p>
         )}
@@ -157,7 +157,7 @@ function StartPage() {
                 exit="exit"
                 transition={{ duration: 0.35, ease: "easeInOut" }}
               >
-                <h1 className="font-heading font-black uppercase text-3xl md:text-4xl leading-tight mb-8">
+                <h1 className="font-display font-black uppercase text-3xl md:text-4xl leading-tight mb-8">
                   {t(`wizard.q${step + 1}`)}
                 </h1>
 
@@ -214,7 +214,7 @@ function StartPage() {
                           key={service}
                           type="button"
                           onClick={() => toggleService(service)}
-                          className={`border px-6 py-3 font-heading text-sm uppercase tracking-widest transition-colors ${
+                          className={`border px-6 py-3 font-display text-sm uppercase tracking-widest transition-colors ${
                             selected
                               ? "border-brand bg-brand text-white"
                               : "border-white/25 text-white/75 hover:border-white/60"
@@ -236,7 +236,7 @@ function StartPage() {
                           key={range}
                           type="button"
                           onClick={() => setForm((f) => ({ ...f, pages: range }))}
-                          className={`border px-6 py-4 font-heading text-sm uppercase tracking-widest transition-colors ${
+                          className={`border px-6 py-4 font-display text-sm uppercase tracking-widest transition-colors ${
                             selected
                               ? "border-brand bg-brand text-white"
                               : "border-white/25 text-white/75 hover:border-white/60"
@@ -270,7 +270,7 @@ function StartPage() {
                 exit="exit"
                 transition={{ duration: 0.35, ease: "easeInOut" }}
               >
-                <h1 className="font-heading font-black uppercase text-3xl md:text-4xl leading-tight mb-8">
+                <h1 className="font-display font-black uppercase text-3xl md:text-4xl leading-tight mb-8">
                   {t("wizard.reviewTitle")}
                 </h1>
 
@@ -334,7 +334,7 @@ function StartPage() {
             type="button"
             onClick={goBack}
             disabled={step === 0}
-            className="flex items-center gap-2 border border-white/25 px-6 py-3.5 font-heading text-sm uppercase tracking-widest text-white/80 transition-colors hover:border-white disabled:opacity-30 disabled:pointer-events-none"
+            className="flex items-center gap-2 border border-white/25 px-6 py-3.5 font-display text-sm uppercase tracking-widest text-white/80 transition-colors hover:border-white disabled:opacity-30 disabled:pointer-events-none"
           >
             <ArrowLeft size={16} />
             {t("wizard.back")}
@@ -345,7 +345,7 @@ function StartPage() {
               type="button"
               onClick={goNext}
               disabled={!stepValid}
-              className="flex items-center gap-2 border border-brand bg-brand px-6 py-3.5 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105 disabled:opacity-40 disabled:pointer-events-none disabled:hover:scale-100"
+              className="flex items-center gap-2 border border-brand bg-brand px-6 py-3.5 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105 disabled:opacity-40 disabled:pointer-events-none disabled:hover:scale-100"
             >
               {t("wizard.next")}
               <ArrowRight size={16} />
@@ -355,7 +355,7 @@ function StartPage() {
               type="button"
               onClick={handleSubmit}
               disabled={!form.consent || status === "sending"}
-              className="animate-pulse-red flex items-center gap-2 border border-brand bg-brand px-6 py-3.5 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105 disabled:opacity-40 disabled:pointer-events-none disabled:hover:scale-100"
+              className="animate-pulse-red flex items-center gap-2 border border-brand bg-brand px-6 py-3.5 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105 disabled:opacity-40 disabled:pointer-events-none disabled:hover:scale-100"
             >
               {status === "sending" ? (
                 <Loader2 size={16} className="animate-spin" />

@@ -21,10 +21,10 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="font-heading uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
+          <p className="font-display uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("services.eyebrow")}
           </p>
-          <h2 className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
             {t("services.heading")}
           </h2>
         </motion.div>
@@ -42,7 +42,7 @@ export function Services() {
               <div className="flex h-14 w-14 items-center justify-center border border-brand mb-6">
                 <Icon className="text-accent-x" size={26} />
               </div>
-              <h3 className="font-heading uppercase text-xl tracking-wide mb-3">
+              <h3 className="font-display uppercase text-xl tracking-wide mb-3">
                 {t(`services.${key}.title`)}
               </h3>
               <p className="text-white/65 leading-relaxed">{t(`services.${key}.desc`)}</p>

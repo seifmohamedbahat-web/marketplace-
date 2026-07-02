@@ -16,7 +16,7 @@ function ReviewCard({ review }: { review: Review }) {
         "{review.quote[language] ?? review.quote.en}"
       </p>
       <div className="mt-5">
-        <p className="font-heading uppercase tracking-wide text-sm">{review.name}</p>
+        <p className="font-display uppercase tracking-wide text-sm">{review.name}</p>
         <p className="text-xs text-white/50">{review.role[language] ?? review.role.en}</p>
       </div>
     </div>
@@ -40,10 +40,10 @@ export function Reviews() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="font-heading uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
+          <p className="font-display uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("reviews.eyebrow")}
           </p>
-          <h2 className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
             {t("reviews.heading")}
           </h2>
         </motion.div>

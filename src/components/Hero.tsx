@@ -29,7 +29,7 @@ export function Hero() {
       >
         <motion.h1
           variants={item}
-          className="font-heading font-black uppercase leading-[0.95] text-6xl md:text-8xl"
+          className="font-display font-black uppercase leading-[0.95] text-6xl md:text-8xl"
         >
           <span className="block text-white">{t("hero.line1")}</span>
           <span className="block text-accent-x">{t("hero.line2")}</span>
@@ -45,13 +45,13 @@ export function Hero() {
         <motion.div variants={item} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/start"
-            className="animate-pulse-red w-full sm:w-auto border border-brand bg-brand px-8 py-4 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
+            className="animate-pulse-red w-full sm:w-auto border border-brand bg-brand px-8 py-4 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
           >
             {t("hero.ctaPrimary")}
           </Link>
           <a
             href="#portfolio"
-            className="w-full sm:w-auto border border-white px-8 py-4 font-heading text-sm uppercase tracking-widest text-white transition-all hover:scale-105 hover:border-brand hover:text-accent-x"
+            className="w-full sm:w-auto border border-white px-8 py-4 font-display text-sm uppercase tracking-widest text-white transition-all hover:scale-105 hover:border-brand hover:text-accent-x"
           >
             {t("hero.ctaSecondary")}
           </a>

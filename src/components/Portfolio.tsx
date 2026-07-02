@@ -35,10 +35,10 @@ function ProjectCard({
         />
       </button>
       <div className="p-5">
-        <p className="font-heading uppercase tracking-widest text-xs text-accent-x mb-1">
+        <p className="font-display uppercase tracking-widest text-xs text-accent-x mb-1">
           {localize(project.type, lang)}
         </p>
-        <h3 className="font-heading uppercase text-lg tracking-wide">{project.name}</h3>
+        <h3 className="font-display uppercase text-lg tracking-wide">{project.name}</h3>
         <div className="mt-2">
           <StarRating size={14} />
         </div>
@@ -48,7 +48,7 @@ function ProjectCard({
         <button
           type="button"
           onClick={onOpen}
-          className="mt-4 flex w-full items-center justify-center gap-2 bg-white px-4 py-2.5 font-heading text-xs uppercase tracking-widest text-black transition-all duration-300 hover:gap-3 hover:scale-105 hover:bg-brand hover:text-white active:scale-95"
+          className="mt-4 flex w-full items-center justify-center gap-2 bg-white px-4 py-2.5 font-display text-xs uppercase tracking-widest text-black transition-all duration-300 hover:gap-3 hover:scale-105 hover:bg-brand hover:text-white active:scale-95"
         >
           {t("portfolio.learnMore")}
           <ArrowRight size={14} className="rtl:rotate-180" />
@@ -76,10 +76,10 @@ export function Portfolio() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="font-heading uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
+          <p className="font-display uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("portfolio.eyebrow")}
           </p>
-          <h2 className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
             {t("portfolio.heading")}
           </h2>
         </motion.div>
@@ -109,10 +109,10 @@ export function Portfolio() {
               />
             </div>
             <div className="p-6 md:p-8">
-              <p className="font-heading uppercase tracking-widest text-xs text-accent-x mb-2">
+              <p className="font-display uppercase tracking-widest text-xs text-accent-x mb-2">
                 {localize(active.type, language)}
               </p>
-              <h3 className="font-heading uppercase text-2xl md:text-3xl tracking-wide mb-4">
+              <h3 className="font-display uppercase text-2xl md:text-3xl tracking-wide mb-4">
                 {active.name}
               </h3>
               <div className="mb-4">
@@ -121,7 +121,7 @@ export function Portfolio() {
               <p className="text-white/70 leading-relaxed mb-6">
                 {localize(active.description, language)}
               </p>
-              <p className="font-heading uppercase tracking-widest text-xs text-white/50 mb-3">
+              <p className="font-display uppercase tracking-widest text-xs text-white/50 mb-3">
                 {t("portfolio.techStack")}
               </p>
               <div className="flex flex-wrap gap-2">

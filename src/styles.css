@@ -2,10 +2,9 @@
 
 @theme {
   --color-brand: #c41e1e;
-  --font-heading: "Oswald", "Cairo", sans-serif;
-  --font-body: "Inter", "Tajawal", sans-serif;
-  --font-heading-ar: "Cairo", sans-serif;
-  --font-body-ar: "Tajawal", sans-serif;
+  --font-display: "Oswald", "Bebas Neue", "Anton", sans-serif;
+  --font-sans: "Inter", "Poppins", sans-serif;
+  --font-arabic: "Cairo", "Tajawal", "Almarai", sans-serif;
 }
 
 * {
@@ -22,7 +21,7 @@ body {
   margin: 0;
   background-color: #000000;
   color: #ffffff;
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
@@ -32,12 +31,12 @@ h3,
 h4,
 h5,
 h6,
-.font-heading {
-  font-family: var(--font-heading);
+.font-display {
+  font-family: var(--font-display);
 }
 
 html[lang="ar"] body {
-  font-family: var(--font-body-ar);
+  font-family: var(--font-arabic);
 }
 
 html[lang="ar"] h1,
@@ -46,8 +45,8 @@ html[lang="ar"] h3,
 html[lang="ar"] h4,
 html[lang="ar"] h5,
 html[lang="ar"] h6,
-html[lang="ar"] .font-heading {
-  font-family: var(--font-heading-ar);
+html[lang="ar"] .font-display {
+  font-family: var(--font-arabic);
   letter-spacing: 0;
 }
 

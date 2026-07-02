@@ -90,7 +90,7 @@ export function Nav() {
               key={link.key}
               to={link.to}
               hash={link.hash}
-              className="font-heading text-sm uppercase tracking-widest text-white/80 hover:text-white transition-colors [&.active]:text-white"
+              className="font-display text-sm uppercase tracking-widest text-white/80 hover:text-white transition-colors [&.active]:text-white"
             >
               {link.label}
             </Link>
@@ -141,7 +141,7 @@ export function Nav() {
 
           <Link
             to="/start"
-            className="animate-pulse-red border border-brand bg-brand px-6 py-2.5 font-heading text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
+            className="animate-pulse-red border border-brand bg-brand px-6 py-2.5 font-display text-sm uppercase tracking-widest text-white transition-transform hover:scale-105"
           >
             {t("nav.startNow")}
           </Link>
@@ -168,7 +168,7 @@ export function Nav() {
                   to={link.to}
                   hash={link.hash}
                   onClick={() => setMobileOpen(false)}
-                  className="font-heading py-3 text-lg uppercase tracking-widest text-white/85 hover:text-accent-x transition-colors"
+                  className="font-display py-3 text-lg uppercase tracking-widest text-white/85 hover:text-accent-x transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -176,7 +176,7 @@ export function Nav() {
               <Link
                 to="/start"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 bg-brand px-6 py-3 text-center font-heading text-sm uppercase tracking-widest text-white"
+                className="mt-4 bg-brand px-6 py-3 text-center font-display text-sm uppercase tracking-widest text-white"
               >
                 {t("nav.startNow")}
               </Link>
@@ -186,7 +186,7 @@ export function Nav() {
                     key={lang}
                     type="button"
                     onClick={() => selectLanguage(lang)}
-                    className={`border px-4 py-1.5 text-sm font-heading uppercase tracking-widest transition-colors ${
+                    className={`border px-4 py-1.5 text-sm font-display uppercase tracking-widest transition-colors ${
                       lang === language
                         ? "border-brand text-accent-x"
                         : "border-white/20 text-white/70 hover:border-white/50"
