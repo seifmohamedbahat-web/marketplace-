@@ -1,0 +1,95 @@
+{
+  "nav": { "home": "Home", "portfolio": "Portfolio", "contact": "Contact", "startNow": "Start Now" },
+  "hero": {
+    "line1": "We Build,",
+    "line2": "You Earn",
+    "subline": "We design & develop stunning websites, dashboards, and systems that drive real results for your business.",
+    "ctaPrimary": "Start Your Project →",
+    "ctaSecondary": "See Our Work"
+  },
+  "services": {
+    "eyebrow": "What We Do",
+    "heading": "Services Built to Perform.",
+    "websites": { "title": "Websites", "desc": "Custom-designed, blazing-fast, responsive websites engineered to turn visitors into paying customers." },
+    "dashboards": { "title": "Dashboards", "desc": "Powerful admin & analytics panels — real-time metrics, clean UI, and total control over your data." },
+    "systems": { "title": "Systems", "desc": "CRMs, booking engines, inventory, and custom internal tools built around how your business actually runs." }
+  },
+  "portfolio": { "eyebrow": "Our Work", "heading": "Projects That Deliver.", "techStack": "Tech Stack", "viewProject": "View Project", "learnMore": "Learn More" },
+  "about": {
+    "heading": "A Team That Builds Digital Excellence.",
+    "body": "Avexa is a studio of designers and engineers obsessed with one thing — building digital products that make our clients money. We don't do templates. We don't do average. Every website, dashboard, and system we ship is engineered to perform, scale, and convert.",
+    "stats": { "projects": "Projects Completed", "clients": "Happy Clients", "years": "Years of Experience", "satisfaction": "Client Satisfaction" }
+  },
+  "reviews": { "eyebrow": "Testimonials", "heading": "What Our Clients Say." },
+  "finalCta": {
+    "heading": "Ready to Build Something Amazing?",
+    "subline": "Tell us about your project. We'll reply within 24 hours.",
+    "primary": "Start Now",
+    "secondary": "Or contact us directly"
+  },
+  "wizard": {
+    "intro": "Let's build something. 7 quick questions.",
+    "progress": "Question {{current}} of {{total}}",
+    "back": "Back",
+    "next": "Next",
+    "q1": "What's your full name?",
+    "q2": "What's your email?",
+    "q3": "What's your phone number?",
+    "q4": "What's your brand or company name?",
+    "q5": "What service do you need?",
+    "q6": "How many pages or screens?",
+    "q7": "Tell us about your project.",
+    "placeholders": {
+      "name": "Jane Doe",
+      "email": "jane@company.com",
+      "company": "Your brand or company",
+      "message": "Tell us what you're building, who it's for, and what success looks like..."
+    },
+    "options": { "website": "Website", "dashboard": "Dashboard", "system": "System" },
+    "pageOptions": { "1-5": "1 – 5", "6-10": "6 – 10", "11-20": "11 – 20", "20+": "20+" },
+    "reviewTitle": "Review your request",
+    "fields": { "name": "Name", "email": "Email", "phone": "Phone", "company": "Brand / Company", "services": "Services", "pages": "Pages / Screens", "message": "Project Details" },
+    "edit": "Edit",
+    "consent": "I agree to be contacted about my project.",
+    "submit": "Submit Project Request →",
+    "sending": "Sending...",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email address.",
+      "phone": "Please enter a valid phone number.",
+      "consent": "Please confirm you agree to be contacted.",
+      "submit": "Something went wrong. Please try again or email us directly."
+    }
+  },
+  "contact": {
+    "heading": "Let's Talk.",
+    "subline": "Have a project or a question? Drop us a line and we'll get back within 24 hours.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent! Redirecting...",
+    "error": "Something went wrong. Please try again or email us directly.",
+    "infoHeading": "Get in Touch",
+    "infoBlurb": "Prefer to talk directly? Reach us through any of the channels below."
+  },
+  "thankYou": {
+    "heading": "Thank You.",
+    "subtitle": "We've received your request. Expect a reply from the Avexa team within 24 hours.",
+    "back": "Back to Home",
+    "fallback": "In a hurry? Email us directly at seifmohamedbahat@gmail.com."
+  },
+  "footer": {
+    "tagline": "We Build, You Earn",
+    "blurb": "A studio building websites, dashboards, and systems that perform.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "follow": "Follow Us",
+    "rights": "All rights reserved."
+  },
+  "modal": { "close": "Close" },
+  "phone": { "search": "Search country or code..." }
+}
