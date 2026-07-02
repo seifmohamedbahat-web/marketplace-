@@ -48,7 +48,7 @@ function ProjectCard({
         <button
           type="button"
           onClick={onOpen}
-          className="mt-4 inline-flex items-center gap-2 bg-white px-4 py-2 font-heading text-xs uppercase tracking-widest text-black transition-colors hover:bg-brand hover:text-white"
+          className="mt-4 flex w-full items-center justify-center gap-2 bg-white px-4 py-2.5 font-heading text-xs uppercase tracking-widest text-black transition-all duration-300 hover:gap-3 hover:scale-105 hover:bg-brand hover:text-white active:scale-95"
         >
           {t("portfolio.learnMore")}
           <ArrowRight size={14} className="rtl:rotate-180" />
