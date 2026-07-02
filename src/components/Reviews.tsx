@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { reviews, type Review } from "../data/reviews";
 import { useLanguage } from "../i18n/LanguageProvider";
+import { StarRating } from "./StarRating";
 
 function ReviewCard({ review }: { review: Review }) {
   const { language } = useLanguage();
 
   return (
     <div className="w-[320px] md:w-[400px] shrink-0 border border-white/10 bg-black p-6">
-      <div className="flex gap-1 mb-4" aria-hidden>
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Star key={i} size={16} className="fill-brand text-brand" />
-        ))}
+      <div className="mb-4">
+        <StarRating />
       </div>
       <p className="italic text-white/80 leading-relaxed">
         "{review.quote[language] ?? review.quote.en}"

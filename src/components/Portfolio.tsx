@@ -6,6 +6,7 @@ import { portfolioProjects, localize, type PortfolioProject } from "../data/port
 import type { SupportedLanguage } from "../i18n";
 import { useLanguage } from "../i18n/LanguageProvider";
 import { Modal } from "./Modal";
+import { StarRating } from "./StarRating";
 
 function ProjectCard({
   project,
@@ -38,13 +39,16 @@ function ProjectCard({
           {localize(project.type, lang)}
         </p>
         <h3 className="font-heading uppercase text-lg tracking-wide">{project.name}</h3>
+        <div className="mt-2">
+          <StarRating size={14} />
+        </div>
         <p className="mt-2 text-sm text-white/60 line-clamp-2">
           {localize(project.description, lang)}
         </p>
         <button
           type="button"
           onClick={onOpen}
-          className="mt-4 inline-flex items-center gap-2 font-heading text-xs uppercase tracking-widest text-accent-x transition-all hover:gap-3"
+          className="mt-4 inline-flex items-center gap-2 bg-white px-4 py-2 font-heading text-xs uppercase tracking-widest text-black transition-colors hover:bg-brand hover:text-white"
         >
           {t("portfolio.learnMore")}
           <ArrowRight size={14} className="rtl:rotate-180" />
@@ -111,6 +115,9 @@ export function Portfolio() {
               <h3 className="font-heading uppercase text-2xl md:text-3xl tracking-wide mb-4">
                 {active.name}
               </h3>
+              <div className="mb-4">
+                <StarRating />
+              </div>
               <p className="text-white/70 leading-relaxed mb-6">
                 {localize(active.description, language)}
               </p>
