@@ -1,0 +1,16 @@
+{
+  "name": "deploy-cli",
+  "version": "1.0.0",
+  "description": "One command to deploy any static site to a free host with a live subdomain (Surge, Netlify, Vercel, Cloudflare Pages, GitHub Pages).",
+  "type": "module",
+  "bin": {
+    "deploy-cli": "./bin/deploy-cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/cli.test.js"
+  },
+  "license": "MIT"
+}
