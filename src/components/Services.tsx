@@ -24,7 +24,7 @@ export function Services() {
           <p className="font-heading uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("services.eyebrow")}
           </p>
-          <h2 className="font-heading font-black uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight">
             {t("services.heading")}
           </h2>
         </motion.div>

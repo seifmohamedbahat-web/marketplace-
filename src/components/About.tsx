@@ -52,7 +52,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-black uppercase text-4xl md:text-5xl leading-tight"
+          className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight"
         >
           {t("about.heading")}
         </motion.h2>

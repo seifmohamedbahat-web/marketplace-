@@ -63,7 +63,7 @@ export function Portfolio() {
           <p className="font-heading uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("portfolio.eyebrow")}
           </p>
-          <h2 className="font-heading font-black uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-heading font-normal uppercase text-4xl md:text-5xl leading-tight">
             {t("portfolio.heading")}
           </h2>
         </motion.div>
