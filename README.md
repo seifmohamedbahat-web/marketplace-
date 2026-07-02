@@ -11,7 +11,8 @@ and Framer Motion.
 - **Framer Motion** — page/section/marquee/wizard animations
 - **react-i18next** — English, French, and Arabic (full RTL) via `src/i18n`
 - **Web3Forms** — form submission for `/start` and `/contact` (no `mailto:` fallback)
-- **Netlify** — SSR deploy via `@netlify/vite-plugin-tanstack-start`
+- **Nitro** (`nitro/vite`) — SSR build with zero-config deploy detection for
+  Vercel, Netlify, Cloudflare, and other providers
 
 ## Getting started
 
@@ -35,6 +36,27 @@ The `/start` project wizard and `/contact` page both submit to
 Without a key, submissions will fail gracefully with an inline error message
 (no `mailto:` fallback is used anywhere).
 
+## Deploying
+
+The build is powered by [Nitro](https://nitro.build), which auto-detects the
+hosting provider at build time from CI environment variables — no
+provider-specific config file is needed.
+
+### Vercel
+
+1. Import the repo at [vercel.com/new](https://vercel.com/new). No framework
+   preset or build settings need to be changed — Nitro detects `VERCEL=1` and
+   builds straight to `.vercel/output` (Build Output API v3).
+2. Add `VITE_WEB3FORMS_ACCESS_KEY` under **Project Settings → Environment
+   Variables**.
+
+### Netlify
+
+1. Import the repo in the Netlify UI. Netlify detects the Nitro output and
+   sets the build command / publish directory automatically.
+2. Add `VITE_WEB3FORMS_ACCESS_KEY` under **Site settings → Environment
+   variables**.
+
 ## Project structure
 
 ```
@@ -48,7 +70,6 @@ src/
   styles.css          # Tailwind v4 theme tokens + utility classes
 public/
   portfolio/          # real project screenshots used in the portfolio marquee
-netlify.toml
 ```
 
 ## Scripts
