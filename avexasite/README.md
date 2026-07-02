@@ -11,7 +11,7 @@ and Framer Motion.
 - **Framer Motion** — page/section/marquee/wizard animations
 - **react-i18next** — English, French, and Arabic (full RTL) via `src/i18n`
 - **Web3Forms** — form submission for `/start` and `/contact` (no `mailto:` fallback)
-- **Netlify** — SSR deploy via `@netlify/vite-plugin-tanstack-start`
+- **Vercel** — SSR deploy via Nitro (`nitro/vite`)
 
 ## Getting started
 
@@ -30,7 +30,7 @@ The `/start` project wizard and `/contact` page both submit to
 1. Go to https://web3forms.com and enter your email — no signup, you get an
    access key instantly.
 2. Put it in `.env` as `VITE_WEB3FORMS_ACCESS_KEY=...` for local dev, and as
-   an environment variable in your Netlify site settings for production.
+   an environment variable in your Vercel project settings for production.
 
 Without a key, submissions will fail gracefully with an inline error message
 (no `mailto:` fallback is used anywhere).
@@ -48,7 +48,6 @@ src/
   styles.css          # Tailwind v4 theme tokens + utility classes
 public/
   portfolio/          # real project screenshots used in the portfolio marquee
-netlify.toml
 ```
 
 ## Scripts

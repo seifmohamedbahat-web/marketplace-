@@ -29,7 +29,6 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@netlify/vite-plugin-tanstack-start": "^1.2.15",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/devtools-vite": "latest",
     "@tanstack/router-cli": "^1.132.0",
@@ -40,6 +39,7 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^6.0.1",
     "jsdom": "^28.1.0",
+    "nitro": "latest",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
     "vitest": "^4.1.5"
