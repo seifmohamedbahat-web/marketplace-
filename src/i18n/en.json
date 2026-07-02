@@ -14,7 +14,7 @@
     "dashboards": { "title": "Dashboards", "desc": "Powerful admin & analytics panels — real-time metrics, clean UI, and total control over your data." },
     "systems": { "title": "Systems", "desc": "CRMs, booking engines, inventory, and custom internal tools built around how your business actually runs." }
   },
-  "portfolio": { "eyebrow": "Our Work", "heading": "Projects That Deliver.", "techStack": "Tech Stack", "viewProject": "View Project" },
+  "portfolio": { "eyebrow": "Our Work", "heading": "Projects That Deliver.", "techStack": "Tech Stack", "viewProject": "View Project", "learnMore": "Learn More" },
   "about": {
     "heading": "A Team That Builds Digital Excellence.",
     "body": "Avexa is a studio of designers and engineers obsessed with one thing — building digital products that make our clients money. We don't do templates. We don't do average. Every website, dashboard, and system we ship is engineered to perform, scale, and convert.",

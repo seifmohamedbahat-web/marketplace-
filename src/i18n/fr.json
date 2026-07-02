@@ -14,7 +14,7 @@
     "dashboards": { "title": "Tableaux de Bord", "desc": "Des panneaux d'analyse puissants — métriques en temps réel, interface épurée et contrôle total de vos données." },
     "systems": { "title": "Systèmes", "desc": "CRM, réservation, inventaire et outils internes sur mesure, pensés pour votre façon de travailler." }
   },
-  "portfolio": { "eyebrow": "Nos Réalisations", "heading": "Des Projets Qui Livrent.", "techStack": "Technologies", "viewProject": "Voir le Projet" },
+  "portfolio": { "eyebrow": "Nos Réalisations", "heading": "Des Projets Qui Livrent.", "techStack": "Technologies", "viewProject": "Voir le Projet", "learnMore": "En Savoir Plus" },
   "about": {
     "heading": "Une Équipe Qui Bâtit l'Excellence Numérique.",
     "body": "Avexa est un studio de designers et d'ingénieurs obsédés par une seule chose : créer des produits numériques qui rapportent à nos clients. Pas de templates. Pas de médiocrité. Chaque site, tableau de bord et système que nous livrons est conçu pour performer, évoluer et convertir.",

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { portfolioProjects, localize, type PortfolioProject } from "../data/portfolio";
 import type { SupportedLanguage } from "../i18n";
@@ -15,20 +16,23 @@ function ProjectCard({
   lang: SupportedLanguage;
   onOpen: () => void;
 }) {
+  const { t } = useTranslation();
+
   return (
-    <button
-      type="button"
-      onClick={onOpen}
-      className="group w-[320px] md:w-[380px] shrink-0 border border-white/10 bg-black text-start red-glow-hover"
-    >
-      <div className="aspect-video w-full overflow-hidden bg-white/5">
+    <div className="group w-[320px] md:w-[380px] shrink-0 border border-white/10 bg-black text-start red-glow-hover">
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label={`${t("portfolio.viewProject")}: ${project.name}`}
+        className="block aspect-video w-full overflow-hidden bg-white/5"
+      >
         <img
           src={project.image}
           alt={project.name}
           loading="lazy"
           className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
         />
-      </div>
+      </button>
       <div className="p-5">
         <p className="font-heading uppercase tracking-widest text-xs text-accent-x mb-1">
           {localize(project.type, lang)}
@@ -37,8 +41,16 @@ function ProjectCard({
         <p className="mt-2 text-sm text-white/60 line-clamp-2">
           {localize(project.description, lang)}
         </p>
+        <button
+          type="button"
+          onClick={onOpen}
+          className="mt-4 inline-flex items-center gap-2 font-heading text-xs uppercase tracking-widest text-accent-x transition-all hover:gap-3"
+        >
+          {t("portfolio.learnMore")}
+          <ArrowRight size={14} className="rtl:rotate-180" />
+        </button>
       </div>
-    </button>
+    </div>
   );
 }
 
