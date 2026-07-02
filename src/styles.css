@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #c41e1e;
+  --font-heading: "Oswald", "Cairo", sans-serif;
+  --font-body: "Inter", "Tajawal", sans-serif;
+  --font-heading-ar: "Cairo", sans-serif;
+  --font-body-ar: "Tajawal", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+html[lang="ar"] body {
+  font-family: var(--font-body-ar);
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ar"] .font-heading {
+  font-family: var(--font-heading-ar);
+  letter-spacing: 0;
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: #ffffff;
+}
+
+/* Brand accent -- the "X" in Avexa is always red */
+.text-accent-x {
+  color: var(--color-brand);
+}
+
+/* Glow utilities */
+.red-glow {
+  box-shadow: 0 0 30px rgba(196, 30, 30, 0.4);
+}
+
+.red-glow-hover {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.red-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(196, 30, 30, 0.4);
+  border-color: var(--color-brand);
+}
+
+@keyframes pulse-red {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(196, 30, 30, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(196, 30, 30, 0.7);
+  }
+}
+
+.animate-pulse-red {
+  animation: pulse-red 2s ease-in-out infinite;
+}
+
+/* Marquees */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 50s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 50s linear infinite reverse;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}

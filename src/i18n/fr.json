@@ -1,0 +1,95 @@
+{
+  "nav": { "home": "Accueil", "portfolio": "Réalisations", "contact": "Contact", "startNow": "Démarrer" },
+  "hero": {
+    "line1": "Nous Créons,",
+    "line2": "Vous Gagnez",
+    "subline": "Nous concevons et développons des sites web, tableaux de bord et systèmes époustouflants qui génèrent de vrais résultats pour votre entreprise.",
+    "ctaPrimary": "Démarrez Votre Projet →",
+    "ctaSecondary": "Voir Nos Réalisations"
+  },
+  "services": {
+    "eyebrow": "Ce Que Nous Faisons",
+    "heading": "Des Services Conçus Pour Performer.",
+    "websites": { "title": "Sites Web", "desc": "Des sites sur mesure, ultra-rapides et responsives, conçus pour transformer vos visiteurs en clients." },
+    "dashboards": { "title": "Tableaux de Bord", "desc": "Des panneaux d'analyse puissants — métriques en temps réel, interface épurée et contrôle total de vos données." },
+    "systems": { "title": "Systèmes", "desc": "CRM, réservation, inventaire et outils internes sur mesure, pensés pour votre façon de travailler." }
+  },
+  "portfolio": { "eyebrow": "Nos Réalisations", "heading": "Des Projets Qui Livrent.", "techStack": "Technologies", "viewProject": "Voir le Projet" },
+  "about": {
+    "heading": "Une Équipe Qui Bâtit l'Excellence Numérique.",
+    "body": "Avexa est un studio de designers et d'ingénieurs obsédés par une seule chose : créer des produits numériques qui rapportent à nos clients. Pas de templates. Pas de médiocrité. Chaque site, tableau de bord et système que nous livrons est conçu pour performer, évoluer et convertir.",
+    "stats": { "projects": "Projets Réalisés", "clients": "Clients Satisfaits", "years": "Ans d'Expérience", "satisfaction": "Satisfaction Client" }
+  },
+  "reviews": { "eyebrow": "Témoignages", "heading": "Ce Que Disent Nos Clients." },
+  "finalCta": {
+    "heading": "Prêt à Créer Quelque Chose d'Exceptionnel ?",
+    "subline": "Parlez-nous de votre projet. Réponse sous 24 heures.",
+    "primary": "Démarrer",
+    "secondary": "Ou contactez-nous directement"
+  },
+  "wizard": {
+    "intro": "Créons quelque chose. 7 questions rapides.",
+    "progress": "Question {{current}} sur {{total}}",
+    "back": "Retour",
+    "next": "Suivant",
+    "q1": "Quel est votre nom complet ?",
+    "q2": "Quel est votre email ?",
+    "q3": "Quel est votre numéro de téléphone ?",
+    "q4": "Quel est le nom de votre marque ou entreprise ?",
+    "q5": "De quel service avez-vous besoin ?",
+    "q6": "Combien de pages ou d'écrans ?",
+    "q7": "Parlez-nous de votre projet.",
+    "placeholders": {
+      "name": "Jeanne Dupont",
+      "email": "jeanne@entreprise.com",
+      "company": "Votre marque ou entreprise",
+      "message": "Dites-nous ce que vous construisez, pour qui, et à quoi ressemble le succès..."
+    },
+    "options": { "website": "Site Web", "dashboard": "Tableau de Bord", "system": "Système" },
+    "pageOptions": { "1-5": "1 – 5", "6-10": "6 – 10", "11-20": "11 – 20", "20+": "20+" },
+    "reviewTitle": "Vérifiez votre demande",
+    "fields": { "name": "Nom", "email": "Email", "phone": "Téléphone", "company": "Marque / Entreprise", "services": "Services", "pages": "Pages / Écrans", "message": "Détails du Projet" },
+    "edit": "Modifier",
+    "consent": "J'accepte d'être contacté au sujet de mon projet.",
+    "submit": "Envoyer la Demande →",
+    "sending": "Envoi...",
+    "errors": {
+      "required": "Ce champ est requis.",
+      "email": "Veuillez saisir une adresse email valide.",
+      "phone": "Veuillez saisir un numéro de téléphone valide.",
+      "consent": "Veuillez confirmer que vous acceptez d'être contacté.",
+      "submit": "Une erreur est survenue. Réessayez ou écrivez-nous directement."
+    }
+  },
+  "contact": {
+    "heading": "Parlons-en.",
+    "subline": "Un projet ou une question ? Écrivez-nous, nous répondons sous 24 heures.",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "success": "Message envoyé ! Redirection...",
+    "error": "Une erreur est survenue. Réessayez ou écrivez-nous directement.",
+    "infoHeading": "Contactez-Nous",
+    "infoBlurb": "Vous préférez nous parler directement ? Utilisez l'un des canaux ci-dessous."
+  },
+  "thankYou": {
+    "heading": "Merci.",
+    "subtitle": "Nous avons bien reçu votre demande. L'équipe Avexa vous répondra sous 24 heures.",
+    "back": "Retour à l'Accueil",
+    "fallback": "Pressé ? Écrivez-nous directement à seifmohamedbahat@gmail.com."
+  },
+  "footer": {
+    "tagline": "Nous Créons, Vous Gagnez",
+    "blurb": "Un studio qui crée des sites, tableaux de bord et systèmes performants.",
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact",
+    "follow": "Suivez-Nous",
+    "rights": "Tous droits réservés."
+  },
+  "modal": { "close": "Fermer" },
+  "phone": { "search": "Rechercher un pays ou un code..." }
+}

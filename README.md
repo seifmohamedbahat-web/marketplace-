@@ -1,76 +1,73 @@
-# Global Market — Premium Marketplace Homepage
+# Avexa — We Build, You Earn
 
-A high-end, fully responsive homepage mockup for **Global Market**, a global
-marketplace platform that connects buyers with custom product creators
-worldwide. Built to a premium startup standard — clean luxury aesthetic,
-soft shadows, rounded corners, spacious layout, and modern typography in the
-spirit of Shopify + Stripe + Airbnb.
+A premium, dark, multilingual (EN / FR / AR) marketing site for **Avexa**, a
+web-development studio. Built with TanStack Start, React, Tailwind CSS v4,
+and Framer Motion.
 
-> This is a **marketplace UI mockup**. By design it shows platform visuals,
-> categories, seller cards, and trust elements only — **no products, product
-> cards, or product imagery**.
+## Stack
 
-## Preview
+- **TanStack Start** (React + Vite, SSR) — file-based routing in `src/routes`
+- **Tailwind CSS v4** — theme tokens (black / white / brand red) defined in `src/styles.css`
+- **Framer Motion** — page/section/marquee/wizard animations
+- **react-i18next** — English, French, and Arabic (full RTL) via `src/i18n`
+- **Web3Forms** — form submission for `/start` and `/contact` (no `mailto:` fallback)
+- **Netlify** — SSR deploy via `@netlify/vite-plugin-tanstack-start`
 
-Open `index.html` in any modern browser — no build step or dependencies
-required. Everything is plain HTML, CSS, and a small amount of vanilla JS.
+## Getting started
 
 ```bash
-# from the project root
-open index.html          # macOS
-xdg-open index.html      # Linux
-start index.html         # Windows
+npm install
+cp .env.example .env   # then paste your Web3Forms access key
+npm run dev             # http://localhost:3000
 ```
 
-## Sections
+### Web3Forms setup (required for the forms to actually send email)
 
-| # | Section | Highlights |
-|---|---------|-----------|
-| 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
-| 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
-| 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
-| 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
-| 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
-| 6 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
-| 7 | **Testimonials** | Three modern review cards with avatars |
-| 8 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
-| 9 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
+The `/start` project wizard and `/contact` page both submit to
+[Web3Forms](https://web3forms.com), which forwards submissions to
+`seifmohamedbahat@gmail.com`. To activate this:
 
-## Design system
+1. Go to https://web3forms.com and enter your email — no signup, you get an
+   access key instantly.
+2. Put it in `.env` as `VITE_WEB3FORMS_ACCESS_KEY=...` for local dev, and as
+   an environment variable in your Netlify site settings for production.
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| Primary | `#2563EB` | Premium blue — CTAs, links, accents |
-| Secondary | `#7C3AED` | Modern purple — gradients, highlights |
-| Accent | `#06B6D4` | Cyan — status, secondary highlights |
-| Dark text | `#111827` | Headings, body |
-| Gray text | `#6B7280` | Secondary copy |
-| Background | `#F8FAFC` | Page background |
-| Cards | `#FFFFFF` | Surfaces |
-| Borders | `#E5E7EB` | Dividers, outlines |
+Without a key, submissions will fail gracefully with an inline error message
+(no `mailto:` fallback is used anywhere).
 
-- **Type:** Plus Jakarta Sans (display) + Inter (body)
-- **Corners:** 12–28px rounded radii
-- **Elevation:** layered soft shadows
-- **Motion:** reveal-on-scroll, animated stat counters, floating hero cards,
-  gradient hovers — all disabled automatically under
-  `prefers-reduced-motion`.
-
-## Files
+## Project structure
 
 ```
-index.html    # markup for all nine sections
-styles.css    # design system + component styles + responsive rules
-script.js     # sticky nav, mobile menu, scroll reveals, stat counters
+src/
+  routes/            # /, /start, /contact, /thank-you, __root layout
+  components/        # Nav, Footer, Hero, Services, Portfolio, About,
+                      # Reviews, CTA, Modal, PhonePicker, ProgressBar, Particles, Logo
+  i18n/               # react-i18next setup + en.json / fr.json / ar.json
+  data/               # portfolio.ts, reviews.ts, countries.ts (phone dial codes)
+  lib/                # web3forms.ts submission helper
+  styles.css          # Tailwind v4 theme tokens + utility classes
+public/
+  portfolio/          # real project screenshots used in the portfolio marquee
+netlify.toml
 ```
 
-## Responsiveness & accessibility
+## Scripts
 
-- Fluid layout from large desktop down to small phones (4 → 2 → 1 column grids).
-- Glassmorphism navbar collapses to an accessible mobile menu.
-- Semantic landmarks, `aria-label`s, keyboard-focusable controls, visible
-  focus rings, and reduced-motion support.
+```bash
+npm run dev              # start dev server
+npm run build             # production build (client + SSR)
+npm run preview           # preview the production build
+npm run generate-routes   # regenerate src/routeTree.gen.ts after adding routes
+npm test                  # run vitest
+```
 
----
+## Notes
 
-© 2026 Global Market. Mockup for demonstration purposes.
+- The portfolio section showcases 13 real Avexa projects (screenshots in
+  `public/portfolio/`), each localized into EN/FR/AR.
+- The Avexa wordmark (`Ave` white + `x` red + `a` white) is rendered as a
+  styled text logo component (`src/components/Logo.tsx`) in Oswald, matching
+  the brand's black/white/red system, rather than a static image.
+- Language preference is stored in `localStorage` and applied to
+  `<html lang dir>` on the client; Arabic flips the whole layout to RTL and
+  switches to Cairo/Tajawal.
