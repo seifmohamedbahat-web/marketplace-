@@ -111,7 +111,7 @@ export function PhonePicker({
                       setOpen(false);
                       setSearch("");
                     }}
-                    className={`flex w-full items-center gap-3 px-4 py-2 text-start text-sm hover:bg-white/10 transition-colors ${
+                    className={`flex w-full items-center gap-3 px-4 py-2 text-start text-sm transition-all duration-200 hover:translate-x-1 hover:bg-white/10 ${
                       c.code === selected.code ? "text-accent-x" : "text-white/85"
                     }`}
                   >

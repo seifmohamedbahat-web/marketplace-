@@ -214,7 +214,7 @@ function StartPage() {
                           key={service}
                           type="button"
                           onClick={() => toggleService(service)}
-                          className={`border px-6 py-3 font-display text-sm uppercase tracking-widest transition-colors ${
+                          className={`border px-6 py-3 font-display text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 ${
                             selected
                               ? "border-brand bg-brand text-white"
                               : "border-white/25 text-white/75 hover:border-white/60"
@@ -236,7 +236,7 @@ function StartPage() {
                           key={range}
                           type="button"
                           onClick={() => setForm((f) => ({ ...f, pages: range }))}
-                          className={`border px-6 py-4 font-display text-sm uppercase tracking-widest transition-colors ${
+                          className={`border px-6 py-4 font-display text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 ${
                             selected
                               ? "border-brand bg-brand text-white"
                               : "border-white/25 text-white/75 hover:border-white/60"
@@ -302,7 +302,7 @@ function StartPage() {
                       <button
                         type="button"
                         onClick={() => goToStep(row.step)}
-                        className="shrink-0 flex items-center gap-1.5 text-xs uppercase tracking-widest text-white/50 hover:text-accent-x transition-colors"
+                        className="shrink-0 flex items-center gap-1.5 text-xs uppercase tracking-widest text-white/50 transition-all duration-300 hover:translate-x-1 hover:text-accent-x"
                       >
                         <Pencil size={12} />
                         {t("wizard.edit")}
@@ -334,7 +334,7 @@ function StartPage() {
             type="button"
             onClick={goBack}
             disabled={step === 0}
-            className="flex items-center gap-2 border border-white/25 px-6 py-3.5 font-display text-sm uppercase tracking-widest text-white/80 transition-colors hover:border-white disabled:opacity-30 disabled:pointer-events-none"
+            className="flex items-center gap-2 border border-white/25 px-6 py-3.5 font-display text-sm uppercase tracking-widest text-white/80 transition-all duration-300 hover:scale-105 hover:border-white disabled:opacity-30 disabled:pointer-events-none disabled:hover:scale-100"
           >
             <ArrowLeft size={16} />
             {t("wizard.back")}

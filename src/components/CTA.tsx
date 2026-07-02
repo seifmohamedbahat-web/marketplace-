@@ -15,7 +15,7 @@ export function CTA() {
           transition={{ duration: 0.6 }}
           className="red-glow border border-brand bg-black px-6 py-16 md:py-20 text-center"
         >
-          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-bold uppercase text-4xl md:text-5xl leading-tight">
             {t("finalCta.heading")}
           </h2>
           <p className="mt-5 text-white/70 text-lg max-w-xl mx-auto">

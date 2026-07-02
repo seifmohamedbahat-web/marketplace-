@@ -54,7 +54,7 @@ export function Modal({ open, onClose, children }: ModalProps) {
               type="button"
               onClick={onClose}
               aria-label={t("modal.close")}
-              className="absolute end-4 top-4 z-10 text-white/70 hover:text-accent-x transition-colors"
+              className="absolute end-4 top-4 z-10 text-white/70 transition-all duration-300 hover:scale-125 hover:rotate-90 hover:text-accent-x"
             >
               <X size={22} />
             </button>

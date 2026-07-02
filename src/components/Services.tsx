@@ -24,7 +24,7 @@ export function Services() {
           <p className="font-display uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("services.eyebrow")}
           </p>
-          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-bold uppercase text-4xl md:text-5xl leading-tight">
             {t("services.heading")}
           </h2>
         </motion.div>
@@ -37,10 +37,10 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="red-glow-hover border border-white/15 bg-black p-8"
+              className="group red-glow-hover border border-white/15 bg-black p-8 transition-transform duration-300 hover:-translate-y-1.5"
             >
-              <div className="flex h-14 w-14 items-center justify-center border border-brand mb-6">
-                <Icon className="text-accent-x" size={26} />
+              <div className="flex h-14 w-14 items-center justify-center border border-brand mb-6 transition-transform duration-300 group-hover:scale-110 group-hover:bg-brand">
+                <Icon className="text-accent-x transition-colors duration-300 group-hover:text-white" size={26} />
               </div>
               <h3 className="font-display uppercase text-xl tracking-wide mb-3">
                 {t(`services.${key}.title`)}

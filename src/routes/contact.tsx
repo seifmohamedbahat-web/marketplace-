@@ -162,7 +162,7 @@ function ContactPage() {
             <p className="text-white/60 text-sm leading-relaxed mb-6">{t("contact.infoBlurb")}</p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="flex items-center gap-3 text-white/85 hover:text-accent-x transition-colors break-all"
+              className="flex items-center gap-3 text-white/85 transition-all duration-300 hover:translate-x-1 hover:text-accent-x break-all"
             >
               <Mail size={18} className="text-accent-x shrink-0" />
               {CONTACT_EMAIL}

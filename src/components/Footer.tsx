@@ -28,22 +28,22 @@ export function Footer() {
           </h3>
           <ul className="space-y-3">
             <li>
-              <Link to="/" className="text-white/80 hover:text-accent-x transition-colors">
+              <Link to="/" className="inline-block text-white/80 transition-all duration-300 hover:translate-x-1 hover:text-accent-x">
                 {t("nav.home")}
               </Link>
             </li>
             <li>
-              <Link to="/" hash="portfolio" className="text-white/80 hover:text-accent-x transition-colors">
+              <Link to="/" hash="portfolio" className="inline-block text-white/80 transition-all duration-300 hover:translate-x-1 hover:text-accent-x">
                 {t("nav.portfolio")}
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="text-white/80 hover:text-accent-x transition-colors">
+              <Link to="/contact" className="inline-block text-white/80 transition-all duration-300 hover:translate-x-1 hover:text-accent-x">
                 {t("nav.contact")}
               </Link>
             </li>
             <li>
-              <Link to="/start" className="text-white/80 hover:text-accent-x transition-colors">
+              <Link to="/start" className="inline-block text-white/80 transition-all duration-300 hover:translate-x-1 hover:text-accent-x">
                 {t("nav.startNow")}
               </Link>
             </li>
@@ -56,7 +56,7 @@ export function Footer() {
           </h3>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="flex items-center gap-3 text-white/80 hover:text-accent-x transition-colors break-all"
+            className="flex items-center gap-3 text-white/80 transition-all duration-300 hover:translate-x-1 hover:text-accent-x break-all"
           >
             <Mail size={18} className="text-accent-x shrink-0" />
             {CONTACT_EMAIL}

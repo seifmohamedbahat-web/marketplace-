@@ -90,9 +90,10 @@ export function Nav() {
               key={link.key}
               to={link.to}
               hash={link.hash}
-              className="font-display text-sm uppercase tracking-widest text-white/80 hover:text-white transition-colors [&.active]:text-white"
+              className="group relative font-display text-sm uppercase tracking-widest text-white/80 hover:text-white transition-colors [&.active]:text-white"
             >
               {link.label}
+              <span className="absolute -bottom-1 start-0 h-px w-0 bg-brand transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -102,7 +103,7 @@ export function Nav() {
             <button
               type="button"
               onClick={() => setLangOpen((v) => !v)}
-              className="flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-sm text-white/80 transition-all duration-300 hover:scale-105 hover:text-white"
               aria-haspopup="listbox"
               aria-expanded={langOpen}
               aria-label="Select language"
@@ -126,7 +127,7 @@ export function Nav() {
                       <button
                         type="button"
                         onClick={() => selectLanguage(lang)}
-                        className={`block w-full px-4 py-2 text-start text-sm hover:bg-white/10 hover:text-accent-x transition-colors ${
+                        className={`block w-full px-4 py-2 text-start text-sm transition-all duration-200 hover:translate-x-1 hover:bg-white/10 hover:text-accent-x ${
                           lang === language ? "text-accent-x" : "text-white/80"
                         }`}
                       >
@@ -168,7 +169,7 @@ export function Nav() {
                   to={link.to}
                   hash={link.hash}
                   onClick={() => setMobileOpen(false)}
-                  className="font-display py-3 text-lg uppercase tracking-widest text-white/85 hover:text-accent-x transition-colors"
+                  className="font-display py-3 text-lg uppercase tracking-widest text-white/85 transition-all duration-300 hover:translate-x-2 hover:text-accent-x"
                 >
                   {link.label}
                 </Link>
@@ -186,7 +187,7 @@ export function Nav() {
                     key={lang}
                     type="button"
                     onClick={() => selectLanguage(lang)}
-                    className={`border px-4 py-1.5 text-sm font-display uppercase tracking-widest transition-colors ${
+                    className={`border px-4 py-1.5 text-sm font-display uppercase tracking-widest transition-all duration-300 hover:scale-105 ${
                       lang === language
                         ? "border-brand text-accent-x"
                         : "border-white/20 text-white/70 hover:border-white/50"

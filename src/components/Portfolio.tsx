@@ -20,7 +20,7 @@ function ProjectCard({
   const { t } = useTranslation();
 
   return (
-    <div className="group w-[320px] md:w-[380px] shrink-0 border border-white/10 bg-black text-start red-glow-hover">
+    <div className="group w-[320px] md:w-[380px] shrink-0 border border-white/10 bg-black text-start red-glow-hover transition-transform duration-300 hover:-translate-y-1.5">
       <button
         type="button"
         onClick={onOpen}
@@ -35,10 +35,12 @@ function ProjectCard({
         />
       </button>
       <div className="p-5">
-        <p className="font-display uppercase tracking-widest text-xs text-accent-x mb-1">
-          {localize(project.type, lang)}
-        </p>
-        <h3 className="font-display uppercase text-lg tracking-wide">{project.name}</h3>
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-display font-bold uppercase text-lg tracking-wide">{project.name}</h3>
+          <span className="shrink-0 rounded-full bg-brand px-3 py-1 text-xs font-display text-white">
+            {localize(project.type, lang)}
+          </span>
+        </div>
         <div className="mt-2">
           <StarRating size={14} />
         </div>
@@ -48,7 +50,7 @@ function ProjectCard({
         <button
           type="button"
           onClick={onOpen}
-          className="mt-4 flex w-full items-center justify-center gap-2 bg-white px-4 py-2.5 font-display text-xs uppercase tracking-widest text-black transition-all duration-300 hover:gap-3 hover:scale-105 hover:bg-brand hover:text-white active:scale-95"
+          className="mt-4 flex w-full items-center justify-center gap-2 border border-white/70 px-4 py-2.5 font-display text-sm text-white transition-all duration-300 hover:gap-3 hover:scale-105 hover:border-brand hover:bg-brand active:scale-95"
         >
           {t("portfolio.learnMore")}
           <ArrowRight size={14} className="rtl:rotate-180" />
@@ -79,7 +81,7 @@ export function Portfolio() {
           <p className="font-display uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("portfolio.eyebrow")}
           </p>
-          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-bold uppercase text-4xl md:text-5xl leading-tight">
             {t("portfolio.heading")}
           </h2>
         </motion.div>
@@ -112,7 +114,7 @@ export function Portfolio() {
               <p className="font-display uppercase tracking-widest text-xs text-accent-x mb-2">
                 {localize(active.type, language)}
               </p>
-              <h3 className="font-display uppercase text-2xl md:text-3xl tracking-wide mb-4">
+              <h3 className="font-display font-bold uppercase text-2xl md:text-3xl tracking-wide mb-4">
                 {active.name}
               </h3>
               <div className="mb-4">

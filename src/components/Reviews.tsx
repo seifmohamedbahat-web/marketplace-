@@ -8,7 +8,7 @@ function ReviewCard({ review }: { review: Review }) {
   const { language } = useLanguage();
 
   return (
-    <div className="w-[320px] md:w-[400px] shrink-0 border border-white/10 bg-black p-6">
+    <div className="w-[320px] md:w-[400px] shrink-0 border border-white/10 bg-black p-6 red-glow-hover transition-transform duration-300 hover:-translate-y-1.5">
       <div className="mb-4">
         <StarRating />
       </div>
@@ -43,7 +43,7 @@ export function Reviews() {
           <p className="font-display uppercase tracking-[0.3em] text-accent-x text-sm mb-4">
             {t("reviews.eyebrow")}
           </p>
-          <h2 className="font-display font-normal uppercase text-4xl md:text-5xl leading-tight">
+          <h2 className="font-display font-bold uppercase text-4xl md:text-5xl leading-tight">
             {t("reviews.heading")}
           </h2>
         </motion.div>

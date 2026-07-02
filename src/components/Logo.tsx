@@ -11,7 +11,7 @@ export function Logo({ size = "nav" }: { size?: keyof typeof SIZE_CLASSES }) {
     <Link
       to="/"
       aria-label="Avexa — home"
-      className={`font-display font-black uppercase tracking-tight leading-none ${SIZE_CLASSES[size]}`}
+      className={`inline-block font-display font-black uppercase tracking-tight leading-none transition-transform duration-300 hover:scale-105 ${SIZE_CLASSES[size]}`}
     >
       <span className="text-white">Ave</span>
       <span className="text-accent-x">x</span>
