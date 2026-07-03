@@ -71,6 +71,13 @@ script.js     # sticky nav, mobile menu, scroll reveals, stat counters
 - Semantic landmarks, `aria-label`s, keyboard-focusable controls, visible
   focus rings, and reduced-motion support.
 
+## Growth autopilot
+
+This repo also ships an AI agent pipeline — research, content, lead-gen, and
+outreach drafting, chained end to end in Claude Code. See
+[`GROWTH_AUTOPILOT.md`](./GROWTH_AUTOPILOT.md) and run
+`/growth-autopilot <category>`.
+
 ---
 
 © 2026 Global Market. Mockup for demonstration purposes.
