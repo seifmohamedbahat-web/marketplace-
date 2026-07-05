@@ -1,76 +1,47 @@
-# Global Market — Premium Marketplace Homepage
+# Aurelia Estates — Luxury Real Estate Website
 
-A high-end, fully responsive homepage mockup for **Global Market**, a global
-marketplace platform that connects buyers with custom product creators
-worldwide. Built to a premium startup standard — clean luxury aesthetic,
-soft shadows, rounded corners, spacious layout, and modern typography in the
-spirit of Shopify + Stripe + Airbnb.
+A fully animated, 3D-accented website for a premium real-estate agency. Built as a
+zero-build static site (deployable straight to GitHub Pages).
 
-> This is a **marketplace UI mockup**. By design it shows platform visuals,
-> categories, seller cards, and trust elements only — **no products, product
-> cards, or product imagery**.
+## Pages
 
-## Preview
+| Page | Purpose |
+|------|---------|
+| `index.html` | Home — 3D video hero, about, opportunities + search, reviews, contact form, CTA, footer |
+| `property.html?id=<slug>` | Opportunity detail — gallery, specs, price, features, reviews, enquiry form, similar listings |
+| `contact.html` | Contact — advisory form, office cards, stylised world map |
 
-Open `index.html` in any modern browser — no build step or dependencies
-required. Everything is plain HTML, CSS, and a small amount of vanilla JS.
+## Highlights
 
-```bash
-# from the project root
-open index.html          # macOS
-xdg-open index.html      # Linux
-start index.html         # Windows
-```
+- **3D hero** — the skyline construction video plays behind a live Three.js
+  scene (gold particle field, floating wireframe architectural forms, receding grid),
+  with mouse-driven 3D parallax on the video and content layers.
+- **Animation system** — GSAP + ScrollTrigger reveals, scroll-scrubbed hero zoom,
+  staggered grids, 3D tilt cards, animated counters, marquee ticker, floating glass
+  chips, orb-lit CTA, custom cursor, and an animated preloader.
+- **Premium design language** — ink navy / champagne gold / ivory palette,
+  Cormorant Garamond display type, glassmorphism panels.
+- **Live search** — filter opportunities by keyword, asset type and budget.
+- **Self-contained artwork** — every property image is a deterministic generated
+  SVG skyline (no external image dependencies); the only binary asset is `assets/hero.mp4`.
+- Responsive, keyboard-accessible, honours `prefers-reduced-motion`.
 
-## Sections
-
-| # | Section | Highlights |
-|---|---------|-----------|
-| 1 | **Header** | White glassmorphism navbar, brand logo, primary nav, centered search, Login / Sign Up / Cart |
-| 2 | **Hero** | Headline + dual CTAs over a blue→purple gradient glow, with an abstract connected-globe visual: floating seller card, live order-status tracker, messaging UI, and global-shipping indicator |
-| 3 | **Categories** | Six category cards (Fashion, Home Decor, Jewelry, Art, Handmade Gifts, Tech Accessories) with custom icons |
-| 4 | **Why Us** | Four feature cards — Worldwide Sellers, Secure Payments, Fast Delivery, Custom Orders |
-| 5 | **Seller Spotlight** | Four verified seller cards with avatar, rating, country, and store stats |
-| 6 | **Platform Stats** | Animated count-up dashboard cards — 10,000+ Sellers, 50+ Countries, 1M+ Customers, 500K+ Orders |
-| 7 | **Testimonials** | Three modern review cards with avatars |
-| 8 | **Final CTA** | "Start Selling Globally Today" on a dark premium gradient with grid texture |
-| 9 | **Footer** | Company / Support / Legal / Social columns + newsletter signup + trust badges |
-
-## Design system
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| Primary | `#2563EB` | Premium blue — CTAs, links, accents |
-| Secondary | `#7C3AED` | Modern purple — gradients, highlights |
-| Accent | `#06B6D4` | Cyan — status, secondary highlights |
-| Dark text | `#111827` | Headings, body |
-| Gray text | `#6B7280` | Secondary copy |
-| Background | `#F8FAFC` | Page background |
-| Cards | `#FFFFFF` | Surfaces |
-| Borders | `#E5E7EB` | Dividers, outlines |
-
-- **Type:** Plus Jakarta Sans (display) + Inter (body)
-- **Corners:** 12–28px rounded radii
-- **Elevation:** layered soft shadows
-- **Motion:** reveal-on-scroll, animated stat counters, floating hero cards,
-  gradient hovers — all disabled automatically under
-  `prefers-reduced-motion`.
-
-## Files
+## Structure
 
 ```
-index.html    # markup for all nine sections
-styles.css    # design system + component styles + responsive rules
-script.js     # sticky nav, mobile menu, scroll reveals, stat counters
+index.html  property.html  contact.html
+css/main.css          — design system + all styling
+js/data.js            — property/review data + SVG art generator
+js/main.js            — Three.js scene, GSAP animations, search, forms
+js/property.js        — detail-page renderer (?id= driven)
+assets/hero.mp4       — hero video
 ```
 
-## Responsiveness & accessibility
+## Run locally
 
-- Fluid layout from large desktop down to small phones (4 → 2 → 1 column grids).
-- Glassmorphism navbar collapses to an accessible mobile menu.
-- Semantic landmarks, `aria-label`s, keyboard-focusable controls, visible
-  focus rings, and reduced-motion support.
+```
+python3 -m http.server 8080
+# open http://localhost:8080
+```
 
----
-
-© 2026 Global Market. Mockup for demonstration purposes.
+Deployment: pushed branches deploy via the GitHub Pages workflow in `.github/workflows/`.

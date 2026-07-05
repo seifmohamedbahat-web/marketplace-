@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunity — Aurelia Estates</title>
+  <meta name="description" content="Full details, pricing, features and client reviews for this Aurelia Estates opportunity.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='%23c9a227' stroke-width='6' transform='rotate(45 50 50)'/><text x='50' y='62' font-size='34' text-anchor='middle' fill='%23e8ce8c' font-family='Georgia'>A</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-mark">A</div>
+    <div class="preloader-bar"><i></i></div>
+  </div>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav scrolled">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><span>A</span></span>
+        <span class="brand-name">AURELIA<b>&nbsp;ESTATES</b></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#opportunities" class="active">Opportunities</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn" href="contact.html">Book a Viewing <span class="arr">→</span></a>
+        <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#opportunities">Opportunities</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ===================== DETAIL HERO ===================== -->
+  <section class="detail-hero">
+    <div class="art3d" id="detail-art"></div>
+    <div class="shade"></div>
+    <div class="inner">
+      <div class="container">
+        <nav class="breadcrumb reveal">
+          <a href="index.html">Home</a><span class="sep">◆</span>
+          <a href="index.html#opportunities">Opportunities</a><span class="sep">◆</span>
+          <span id="bc-name">Property</span>
+        </nav>
+        <span class="status-tag" id="p-status">For Sale</span>
+        <h1 id="p-name">Loading…</h1>
+        <div class="loc" id="p-loc"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DETAIL BODY ===================== -->
+  <section class="section" style="padding-top:70px">
+    <div class="container">
+      <div class="detail-layout">
+        <div>
+          <div class="spec-strip reveal" id="p-specs"></div>
+
+          <div class="detail-desc reveal">
+            <span class="kicker">The Residence</span>
+            <h2 style="margin-top:14px">Overview</h2>
+            <p id="p-desc"></p>
+          </div>
+
+          <div class="detail-block reveal">
+            <span class="kicker">Amenities</span>
+            <h2 style="margin-top:14px">Features &amp; Finishes</h2>
+            <div class="feature-grid" id="p-features"></div>
+          </div>
+
+          <div class="detail-block reveal">
+            <span class="kicker">Gallery</span>
+            <h2 style="margin-top:14px">Perspectives</h2>
+            <div class="gallery" id="p-gallery"></div>
+          </div>
+
+          <div class="detail-block reveal">
+            <span class="kicker">Client Voices</span>
+            <h2 style="margin-top:14px">Reviews for this opportunity</h2>
+            <div class="detail-reviews" id="p-reviews"></div>
+          </div>
+
+          <div class="detail-block reveal">
+            <span class="kicker">Enquire</span>
+            <h2 style="margin-top:14px">Request details &amp; viewing</h2>
+            <form class="form-card" data-fake-submit novalidate style="margin-top:26px">
+              <div class="form-fields">
+                <div class="form-row">
+                  <div class="field-group">
+                    <input type="text" id="pf-name" placeholder=" " required>
+                    <label for="pf-name">Full Name</label><span class="bar"></span>
+                  </div>
+                  <div class="field-group">
+                    <input type="email" id="pf-email" placeholder=" " required>
+                    <label for="pf-email">Email Address</label><span class="bar"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field-group">
+                    <input type="tel" id="pf-phone" placeholder=" ">
+                    <label for="pf-phone">Phone (optional)</label><span class="bar"></span>
+                  </div>
+                  <div class="field-group">
+                    <select id="pf-when">
+                      <option value="" selected disabled hidden></option>
+                      <option>As soon as possible</option>
+                      <option>Within a month</option>
+                      <option>Within three months</option>
+                      <option>Just researching</option>
+                    </select>
+                    <label for="pf-when">Viewing timeline</label><span class="bar"></span>
+                  </div>
+                </div>
+                <div class="field-group">
+                  <textarea id="pf-msg" rows="4" placeholder=" "></textarea>
+                  <label for="pf-msg">Questions or requirements</label><span class="bar"></span>
+                </div>
+                <button class="btn solid" type="submit">Request Viewing <span class="arr">→</span></button>
+              </div>
+              <div class="form-success" role="status">
+                <div class="ok">✓</div>
+                <h3 class="display" style="font-size:1.8rem">Request received.</h3>
+                <p style="color:var(--muted)">Your dedicated advisor will confirm a private viewing within one business day.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sticky sidebar -->
+        <aside class="side-card reveal-r">
+          <div class="plabel">Guide Price</div>
+          <div class="pprice" id="p-price"></div>
+          <div class="pyield">Projected gross yield <b id="p-yield"></b></div>
+          <a class="btn solid" href="#" onclick="document.getElementById('pf-name').focus(); return false;">Enquire Now <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="contact.html">Speak to Advisory</a>
+          <hr>
+          <div class="agent">
+            <span class="avatar">S</span>
+            <span><span class="n">Selim Barakat</span><br><span class="r">Senior Private Advisor</span></span>
+          </div>
+          <div style="color:var(--muted);font-size:0.88rem">
+            ✆ +971 4 000 1200<br>
+            ✉ selim@aurelia-estates.com
+          </div>
+          <hr>
+          <div style="font-size:0.8rem;color:var(--muted);letter-spacing:0.06em">
+            Ref: <span id="p-ref" style="color:var(--gold-2)"></span> · Exclusive to Aurelia
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIMILAR ===================== -->
+  <section class="section" style="background:var(--ink-2)">
+    <div class="container">
+      <div class="section-head head-row reveal">
+        <div>
+          <span class="kicker">Continue Exploring</span>
+          <h2 class="section-title">Similar <em>opportunities</em></h2>
+        </div>
+        <a class="btn" href="index.html#opportunities">Full Portfolio <span class="arr">→</span></a>
+      </div>
+      <div class="similar-grid" id="similar-grid" data-stagger></div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta">
+    <div class="cta-orb o1"></div>
+    <div class="cta-orb o2"></div>
+    <div class="container reveal-scale">
+      <h2>Ready to see it <em>in person?</em></h2>
+      <p>Private viewings arranged worldwide within 72 hours, in full discretion.</p>
+      <a class="btn solid" href="contact.html">Arrange a Viewing <span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <span class="brand-mark"><span>A</span></span>
+            <span class="brand-name">AURELIA<b>&nbsp;ESTATES</b></span>
+          </a>
+          <p>A private real-estate house for exceptional assets and exceptional clients, operating across seventeen global markets since 2009.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+            <a href="#" aria-label="X">X</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#opportunities">Opportunities</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#opportunities">Residential Sales</a></li>
+            <li><a href="index.html#opportunities">Investment Advisory</a></li>
+            <li><a href="index.html#opportunities">Off-Plan Portfolios</a></li>
+            <li><a href="contact.html">Golden Visa</a></li>
+            <li><a href="contact.html">Asset Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Private List</h4>
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">Off-market opportunities, monthly. No noise.</p>
+          <form class="newsletter" data-fake-submit>
+            <input type="email" placeholder="Your email" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe">→</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Aurelia Estates. All rights reserved.</span>
+        <span>Crafted with intent · Dubai — London — New York</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/property.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

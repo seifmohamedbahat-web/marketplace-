@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Aurelia Estates</title>
+  <meta name="description" content="Speak with Aurelia Estates' private advisory team. Offices in Dubai, London, New York and Marbella.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='%23c9a227' stroke-width='6' transform='rotate(45 50 50)'/><text x='50' y='62' font-size='34' text-anchor='middle' fill='%23e8ce8c' font-family='Georgia'>A</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-mark">A</div>
+    <div class="preloader-bar"><i></i></div>
+  </div>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav scrolled">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><span>A</span></span>
+        <span class="brand-name">AURELIA<b>&nbsp;ESTATES</b></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#opportunities">Opportunities</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn" href="#form">Book a Viewing <span class="arr">→</span></a>
+        <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#opportunities">Opportunities</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="#form">Contact Form</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal">
+        <a href="index.html">Home</a><span class="sep">◆</span><span>Contact</span>
+      </nav>
+      <span class="kicker reveal" style="margin-top:26px;display:inline-flex">Private Advisory</span>
+      <h1 class="reveal">Let's find what<br><em>belongs to you.</em></h1>
+      <p class="reveal" style="color:var(--muted);max-width:54ch;margin-top:22px">
+        Whether you are acquiring a first residence, structuring a portfolio, or selling
+        a signature asset — a dedicated advisor answers within one business day.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== FORM + INFO ===================== -->
+  <section class="section" id="form">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-l">
+          <span class="kicker">Direct Lines</span>
+          <h2 class="section-title">Reach us <em>anywhere.</em></h2>
+          <div class="item">
+            <div class="ico"><span>✉</span></div>
+            <div><div class="t">General Enquiries</div><div class="d">advisory@aurelia-estates.com</div></div>
+          </div>
+          <div class="item">
+            <div class="ico"><span>◆</span></div>
+            <div><div class="t">Private Clients</div><div class="d">private@aurelia-estates.com</div></div>
+          </div>
+          <div class="item">
+            <div class="ico"><span>✆</span></div>
+            <div><div class="t">Phone &amp; WhatsApp</div><div class="d">+971 4 000 1200 · Mon–Sat, 9:00–21:00 GST</div></div>
+          </div>
+          <div class="item">
+            <div class="ico"><span>◷</span></div>
+            <div><div class="t">Viewings</div><div class="d">Arranged worldwide within 72 hours, in full discretion.</div></div>
+          </div>
+        </div>
+
+        <form class="form-card reveal-r" data-fake-submit novalidate>
+          <div class="form-fields">
+            <div class="form-row">
+              <div class="field-group">
+                <input type="text" id="c-name" placeholder=" " required>
+                <label for="c-name">Full Name</label><span class="bar"></span>
+              </div>
+              <div class="field-group">
+                <input type="email" id="c-email" placeholder=" " required>
+                <label for="c-email">Email Address</label><span class="bar"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field-group">
+                <input type="tel" id="c-phone" placeholder=" ">
+                <label for="c-phone">Phone (optional)</label><span class="bar"></span>
+              </div>
+              <div class="field-group">
+                <select id="c-topic">
+                  <option value="" selected disabled hidden></option>
+                  <option>Buying a residence</option>
+                  <option>Investment portfolio</option>
+                  <option>Selling with Aurelia</option>
+                  <option>Golden Visa advisory</option>
+                  <option>Press &amp; partnerships</option>
+                </select>
+                <label for="c-topic">How can we help?</label><span class="bar"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field-group">
+                <select id="c-budget">
+                  <option value="" selected disabled hidden></option>
+                  <option>Up to $1.5M</option>
+                  <option>$1.5M – $4M</option>
+                  <option>$4M – $10M</option>
+                  <option>$10M+</option>
+                </select>
+                <label for="c-budget">Budget range (optional)</label><span class="bar"></span>
+              </div>
+              <div class="field-group">
+                <select id="c-market">
+                  <option value="" selected disabled hidden></option>
+                  <option>Dubai / UAE</option>
+                  <option>London / UK</option>
+                  <option>New York / US</option>
+                  <option>Marbella / Spain</option>
+                  <option>Bodrum / Türkiye</option>
+                  <option>Undecided — advise me</option>
+                </select>
+                <label for="c-market">Preferred market</label><span class="bar"></span>
+              </div>
+            </div>
+            <div class="field-group">
+              <textarea id="c-msg" rows="5" placeholder=" " required></textarea>
+              <label for="c-msg">Your message</label><span class="bar"></span>
+            </div>
+            <button class="btn solid" type="submit">Send Message <span class="arr">→</span></button>
+          </div>
+          <div class="form-success" role="status">
+            <div class="ok">✓</div>
+            <h3 class="display" style="font-size:1.8rem">Message sent.</h3>
+            <p style="color:var(--muted)">Thank you for reaching out. A dedicated advisor will respond within one business day.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Offices -->
+      <div class="section-head reveal" style="margin-top:110px">
+        <span class="kicker">Our Offices</span>
+        <h2 class="section-title">Four cities, one <em>standard.</em></h2>
+      </div>
+      <div class="office-grid" data-stagger>
+        <div class="office-card">
+          <div class="city">Dubai</div>
+          <div class="addr">Level 42, Meridian Tower<br>Business Bay, Dubai, UAE</div>
+          <a class="tel" href="tel:+97140001200">+971 4 000 1200</a>
+        </div>
+        <div class="office-card">
+          <div class="city">London</div>
+          <div class="addr">18 Berkeley Square<br>Mayfair, London W1J</div>
+          <a class="tel" href="tel:+442070001200">+44 20 7000 1200</a>
+        </div>
+        <div class="office-card">
+          <div class="city">New York</div>
+          <div class="addr">101 Greenwich Street<br>Tribeca, NY 10006</div>
+          <a class="tel" href="tel:+12120001200">+1 212 000 1200</a>
+        </div>
+        <div class="office-card">
+          <div class="city">Marbella</div>
+          <div class="addr">Av. del Mar 7, Golden Mile<br>29602 Marbella, Spain</div>
+          <a class="tel" href="tel:+34950001200">+34 950 00 1200</a>
+        </div>
+      </div>
+
+      <!-- Stylised map -->
+      <div class="map-visual reveal">
+        <svg viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="mapg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0b1120"/><stop offset="1" stop-color="#101827"/>
+            </linearGradient>
+          </defs>
+          <rect width="1200" height="380" fill="url(#mapg)"/>
+          <g stroke="#1c2941" stroke-width="1">
+            <path d="M0 60 H1200 M0 130 H1200 M0 200 H1200 M0 270 H1200 M0 340 H1200"/>
+            <path d="M100 0 V380 M250 0 V380 M400 0 V380 M550 0 V380 M700 0 V380 M850 0 V380 M1000 0 V380 M1150 0 V380"/>
+          </g>
+          <g fill="none" stroke="#27406e" stroke-width="1.5" opacity="0.8">
+            <path d="M120 210 C 180 140, 300 110, 380 150 C 430 175, 420 230, 360 250 C 300 270, 200 260, 120 210 Z"/>
+            <path d="M480 120 C 560 80, 700 90, 760 140 C 820 190, 780 260, 700 270 C 600 285, 500 220, 480 120 Z"/>
+            <path d="M860 180 C 920 130, 1050 140, 1100 190 C 1140 235, 1090 290, 1010 285 C 940 280, 880 240, 860 180 Z"/>
+          </g>
+          <g stroke="#c9a227" stroke-dasharray="4 7" stroke-width="1" opacity="0.6" fill="none">
+            <path d="M300 190 Q 500 60 690 175"/>
+            <path d="M690 175 Q 850 110 990 220"/>
+            <path d="M300 190 Q 620 330 990 220"/>
+          </g>
+          <g fill="#e8ce8c">
+            <circle cx="300" cy="190" r="5"/><circle cx="690" cy="175" r="5"/>
+            <circle cx="990" cy="220" r="5"/><circle cx="530" cy="235" r="5"/>
+          </g>
+          <g fill="#9aa3b5" font-family="Outfit, sans-serif" font-size="13" letter-spacing="2">
+            <text x="316" y="186">NEW YORK</text>
+            <text x="706" y="171">LONDON</text>
+            <text x="1006" y="216">DUBAI</text>
+            <text x="546" y="231">MARBELLA</text>
+          </g>
+        </svg>
+        <span class="map-pin" style="left:24.6%;top:49%"></span>
+        <span class="map-pin" style="left:57.1%;top:45%"></span>
+        <span class="map-pin" style="left:82.1%;top:57%"></span>
+        <span class="map-pin" style="left:43.7%;top:61%"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta">
+    <div class="cta-orb o1"></div>
+    <div class="cta-orb o2"></div>
+    <div class="container reveal-scale">
+      <h2>Prefer to browse <em>first?</em></h2>
+      <p>Eight exceptional assets are currently open to qualified buyers.</p>
+      <a class="btn solid" href="index.html#opportunities">View Opportunities <span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html">
+            <span class="brand-mark"><span>A</span></span>
+            <span class="brand-name">AURELIA<b>&nbsp;ESTATES</b></span>
+          </a>
+          <p>A private real-estate house for exceptional assets and exceptional clients, operating across seventeen global markets since 2009.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+            <a href="#" aria-label="X">X</a>
+            <a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#opportunities">Opportunities</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#opportunities">Residential Sales</a></li>
+            <li><a href="index.html#opportunities">Investment Advisory</a></li>
+            <li><a href="index.html#opportunities">Off-Plan Portfolios</a></li>
+            <li><a href="contact.html">Golden Visa</a></li>
+            <li><a href="contact.html">Asset Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Private List</h4>
+          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">Off-market opportunities, monthly. No noise.</p>
+          <form class="newsletter" data-fake-submit>
+            <input type="email" placeholder="Your email" aria-label="Email for newsletter" required>
+            <button type="submit" aria-label="Subscribe">→</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Aurelia Estates. All rights reserved.</span>
+        <span>Crafted with intent · Dubai — London — New York</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
