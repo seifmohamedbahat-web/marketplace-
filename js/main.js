@@ -231,7 +231,7 @@
           if (!dur || !isFinite(dur)) return;
           // seek gate: never issue a new seek while the previous one is still
           // decoding — this is what keeps scrubbing judder-free
-          let scrubbing = false, seekBusy = false, wantTime = -1;
+          let seekBusy = false, wantTime = -1;
           heroVid.addEventListener("seeked", () => {
             seekBusy = false;
             if (wantTime >= 0 && Math.abs(heroVid.currentTime - wantTime) > 0.06) {
@@ -250,13 +250,9 @@
             trigger: ".hero", start: "top top", end: "+=220%",
             pin: true, scrub: 0.6, anticipatePin: 1,
             onUpdate(self) {
-              if (self.progress > 0.001) {
-                if (!scrubbing) { scrubbing = true; heroVid.pause(); }
-                seekTo(self.progress * (dur - 0.08));
-              } else if (scrubbing) {
-                scrubbing = false;
-                heroVid.play().catch(() => {});
-              }
+              // video stays on its first frame at the top of the page and
+              // only advances as you scroll down
+              seekTo(self.progress * (dur - 0.08));
             }
           });
           // content drifts up and fades while the tower builds
