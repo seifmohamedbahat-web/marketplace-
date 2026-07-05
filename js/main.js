@@ -199,15 +199,47 @@
         .from(".hero-card", { x: 80, opacity: 0, duration: 1.1, ease: "power3.out", clearProps: "opacity" }, "-=0.8")
         .from(".scroll-hint", { opacity: 0, duration: 0.8 }, "-=0.4");
 
-      // scroll-driven hero zoom-out
-      gsap.to(".hero-media", {
-        scale: 1.18, yPercent: 12, ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
-      });
-      gsap.to(".hero-content", {
-        yPercent: -14, opacity: 0.15, ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "70% top", scrub: true }
-      });
+      // scroll-driven video animation: the hero pins and the construction
+      // video scrubs frame-by-frame with the scroll position
+      const heroVid = $(".hero-media video");
+      if (heroVid && !reduceMotion) {
+        const bindScrub = () => {
+          const dur = heroVid.duration;
+          if (!dur || !isFinite(dur)) return;
+          let scrubbing = false;
+          ScrollTrigger.create({
+            trigger: ".hero", start: "top top", end: "+=220%",
+            pin: true, scrub: 0.6, anticipatePin: 1,
+            onUpdate(self) {
+              if (self.progress > 0.001) {
+                if (!scrubbing) { scrubbing = true; heroVid.pause(); }
+                const t = self.progress * (dur - 0.08);
+                if (Math.abs(heroVid.currentTime - t) > 0.02) heroVid.currentTime = t;
+              } else if (scrubbing) {
+                scrubbing = false;
+                heroVid.play().catch(() => {});
+              }
+            }
+          });
+          // content drifts up and fades while the tower builds
+          gsap.to(".hero-content", {
+            yPercent: -18, opacity: 0, ease: "none",
+            scrollTrigger: { trigger: ".hero", start: "top top", end: "+=120%", scrub: true }
+          });
+          gsap.to(".scroll-hint, .hero-card", {
+            opacity: 0, ease: "none",
+            scrollTrigger: { trigger: ".hero", start: "top top", end: "+=40%", scrub: true }
+          });
+        };
+        if (heroVid.readyState >= 1) bindScrub();
+        else heroVid.addEventListener("loadedmetadata", bindScrub, { once: true });
+      } else {
+        // reduced motion fallback: simple parallax fade
+        gsap.to(".hero-content", {
+          yPercent: -14, opacity: 0.15, ease: "none",
+          scrollTrigger: { trigger: ".hero", start: "top top", end: "70% top", scrub: true }
+        });
+      }
     }
 
     // generic reveals

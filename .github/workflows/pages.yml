@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["claude/global-market-homepage-lbgssx"]
+    branches: ["claude/3d-realestate-website-x4gmuc"]
   workflow_dispatch:
 
 permissions:
