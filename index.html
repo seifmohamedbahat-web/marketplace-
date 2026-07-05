@@ -16,14 +16,16 @@
 <header class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="#top" class="brand" aria-label="Blaze Burger home">
-      <span class="brand-flame" aria-hidden="true">🔥</span>
+      <span class="brand-flame" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M13.5 0.67s0.74 2.65 0.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l0.03-0.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5 0.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-0.36 3.6-1.21 4.62-2.58 0.39 1.29 0.59 2.65 0.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
+      </span>
       <span class="brand-name">BLAZE<span class="brand-accent">BURGER</span></span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#top" class="active">Home</a>
       <a href="#menu">Menu</a>
       <a href="#craft">Our Craft</a>
-      <a href="#visit">Visit Us</a>
+      <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
       <a href="#menu" class="btn btn-primary btn-sm">Order Now</a>
@@ -38,8 +40,7 @@
 <section class="hero" id="hero">
   <!-- Video background -->
   <div class="hero-media" aria-hidden="true">
-    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto"
-           poster="">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto">
       <source src="https://videos.pexels.com/video-files/8879540/8879540-hd_1920_1080_25fps.mp4" type="video/mp4" />
       <source src="https://videos.pexels.com/video-files/8879540/8879540-hd_1080_1920_25fps.mp4" type="video/mp4" />
       <source src="https://videos.pexels.com/video-files/8879540/8879540-uhd_2560_1440_25fps.mp4" type="video/mp4" />
@@ -58,7 +59,7 @@
 
   <div class="container hero-inner">
     <div class="hero-copy reveal">
-      <span class="hero-badge">🔥 Flame-Grilled Since 2016</span>
+      <span class="hero-badge">Flame-Grilled Since 2016</span>
       <h1 class="hero-title">
         <span class="line">FLAME.</span>
         <span class="line accent-yellow">SMASH.</span>
@@ -82,7 +83,7 @@
     <!-- 3D burger canvas -->
     <div class="hero-3d reveal" id="hero3d">
       <canvas id="burgerCanvas" aria-label="Interactive 3D burger"></canvas>
-      <div class="hero-3d-hint">drag to spin&nbsp;·&nbsp;it's 3D 🍔</div>
+      <div class="hero-3d-hint">drag to spin — it's 3D</div>
       <div class="hero-3d-glow" aria-hidden="true"></div>
     </div>
   </div>
@@ -93,10 +94,10 @@
 <!-- ========================== TICKER ========================== -->
 <div class="ticker" id="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>🍔 SMASHED FRESH DAILY</span><span>🔥 FLAME-GRILLED</span><span>🧀 MOLTEN CHEESE</span>
-    <span>🥓 CRISPY BACON</span><span>🍟 HAND-CUT FRIES</span><span>🥤 THICK SHAKES</span>
-    <span>🍔 SMASHED FRESH DAILY</span><span>🔥 FLAME-GRILLED</span><span>🧀 MOLTEN CHEESE</span>
-    <span>🥓 CRISPY BACON</span><span>🍟 HAND-CUT FRIES</span><span>🥤 THICK SHAKES</span>
+    <span>SMASHED FRESH DAILY</span><span>•</span><span>FLAME-GRILLED</span><span>•</span><span>MOLTEN CHEESE</span><span>•</span>
+    <span>CRISPY BACON</span><span>•</span><span>HAND-CUT FRIES</span><span>•</span><span>THICK SHAKES</span><span>•</span>
+    <span>SMASHED FRESH DAILY</span><span>•</span><span>FLAME-GRILLED</span><span>•</span><span>MOLTEN CHEESE</span><span>•</span>
+    <span>CRISPY BACON</span><span>•</span><span>HAND-CUT FRIES</span><span>•</span><span>THICK SHAKES</span><span>•</span>
   </div>
 </div>
 
@@ -112,75 +113,99 @@
     <div class="menu-grid">
       <article class="menu-card tilt reveal">
         <div class="card-badge badge-red">Best Seller</div>
-        <div class="card-art" aria-hidden="true"><span class="art-emoji">🍔</span></div>
-        <h3>The Blaze Classic</h3>
-        <p>Double smash patties, American cheese, pickles, charred onions, Blaze sauce.</p>
-        <div class="card-foot">
-          <span class="price">$8.90</span>
-          <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+        <div class="card-art">
+          <img src="assets/img/classic.jpg" alt="The Blaze Classic — double smash cheeseburger" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>The Blaze Classic</h3>
+          <p>Double smash patties, American cheese, pickles, charred onions, Blaze sauce.</p>
+          <div class="card-foot">
+            <span class="price">$8.90</span>
+            <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+          </div>
         </div>
       </article>
 
       <article class="menu-card tilt reveal">
-        <div class="card-badge badge-yellow">Spicy 🌶</div>
-        <div class="card-art" aria-hidden="true"><span class="art-emoji">🔥</span></div>
-        <h3>Inferno Smash</h3>
-        <p>Ghost-pepper jack, jalapeño relish, chipotle mayo, flame-kissed patty.</p>
-        <div class="card-foot">
-          <span class="price">$9.90</span>
-          <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+        <div class="card-badge badge-yellow">Spicy</div>
+        <div class="card-art">
+          <img src="assets/img/inferno.jpg" alt="Inferno Smash — spicy burger with peppers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Inferno Smash</h3>
+          <p>Ghost-pepper jack, jalapeño relish, chipotle mayo, flame-kissed patty.</p>
+          <div class="card-foot">
+            <span class="price">$9.90</span>
+            <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+          </div>
         </div>
       </article>
 
       <article class="menu-card tilt reveal">
-        <div class="card-art" aria-hidden="true"><span class="art-emoji">🥓</span></div>
-        <h3>Bacon Overload</h3>
-        <p>Triple-stacked smoked bacon, cheddar, crispy onions, maple-pepper glaze.</p>
-        <div class="card-foot">
-          <span class="price">$10.50</span>
-          <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+        <div class="card-art">
+          <img src="assets/img/bacon.jpg" alt="Bacon Overload — burger stacked with smoked bacon" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Bacon Overload</h3>
+          <p>Triple-stacked smoked bacon, cheddar, crispy onions, maple-pepper glaze.</p>
+          <div class="card-foot">
+            <span class="price">$10.50</span>
+            <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+          </div>
         </div>
       </article>
 
       <article class="menu-card tilt reveal">
         <div class="card-badge badge-yellow">New</div>
-        <div class="card-art" aria-hidden="true"><span class="art-emoji">🧀</span></div>
-        <h3>Cheese Meltdown</h3>
-        <p>Four-cheese blend melted into the patty, cheese-crusted bun, cheese dip on the side.</p>
-        <div class="card-foot">
-          <span class="price">$9.40</span>
-          <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+        <div class="card-art">
+          <img src="assets/img/meltdown.jpg" alt="Cheese Meltdown — burger with molten cheese" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Cheese Meltdown</h3>
+          <p>Four-cheese blend melted into the patty, cheese-crusted bun, cheese dip on the side.</p>
+          <div class="card-foot">
+            <span class="price">$9.40</span>
+            <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+          </div>
         </div>
       </article>
 
       <article class="menu-card tilt reveal">
-        <div class="card-art" aria-hidden="true"><span class="art-emoji">🥬</span></div>
-        <h3>Garden Blaze</h3>
-        <p>Charred plant-based patty, avocado smash, pickled slaw, herb aioli. 100% veggie.</p>
-        <div class="card-foot">
-          <span class="price">$8.50</span>
-          <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+        <div class="card-art">
+          <img src="assets/img/garden.jpg" alt="Garden Blaze — plant-based veggie burger" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Garden Blaze</h3>
+          <p>Charred plant-based patty, avocado smash, pickled slaw, herb aioli. 100% veggie.</p>
+          <div class="card-foot">
+            <span class="price">$8.50</span>
+            <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+          </div>
         </div>
       </article>
 
       <article class="menu-card tilt reveal">
         <div class="card-badge badge-red">Monster</div>
-        <div class="card-art" aria-hidden="true"><span class="art-emoji">👑</span></div>
-        <h3>The King Stack</h3>
-        <p>Triple patties, triple cheese, bacon jam, onion rings inside the burger. Bring a friend.</p>
-        <div class="card-foot">
-          <span class="price">$13.90</span>
-          <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+        <div class="card-art">
+          <img src="assets/img/kingstack.jpg" alt="The King Stack — triple patty tower burger" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>The King Stack</h3>
+          <p>Triple patties, triple cheese, bacon jam, onion rings inside the burger. Bring a friend.</p>
+          <div class="card-foot">
+            <span class="price">$13.90</span>
+            <button class="btn btn-primary btn-sm add-btn" type="button">Add +</button>
+          </div>
         </div>
       </article>
     </div>
 
     <!-- Sides & shakes -->
     <div class="sides reveal">
-      <div class="side-item"><span>🍟</span><div><h4>Hand-Cut Fries</h4><p class="price-sm">$3.50</p></div></div>
-      <div class="side-item"><span>🧅</span><div><h4>Onion Rings</h4><p class="price-sm">$4.20</p></div></div>
-      <div class="side-item"><span>🥤</span><div><h4>Thick Shakes</h4><p class="price-sm">$5.00</p></div></div>
-      <div class="side-item"><span>🧀</span><div><h4>Cheese Dip</h4><p class="price-sm">$2.80</p></div></div>
+      <div class="side-item"><div><h4>Hand-Cut Fries</h4><p>Twice-fried, sea salt</p></div><span class="price-sm">$3.50</span></div>
+      <div class="side-item"><div><h4>Onion Rings</h4><p>Beer-battered, extra crunch</p></div><span class="price-sm">$4.20</span></div>
+      <div class="side-item"><div><h4>Thick Shakes</h4><p>Vanilla, chocolate, caramel</p></div><span class="price-sm">$5.00</span></div>
+      <div class="side-item"><div><h4>Cheese Dip</h4><p>Warm four-cheese blend</p></div><span class="price-sm">$2.80</span></div>
     </div>
   </div>
 </section>
@@ -203,50 +228,143 @@
       </ul>
       <a href="#menu" class="btn btn-yellow btn-lg">Taste The Difference</a>
     </div>
-    <div class="craft-visual reveal" aria-hidden="true">
-      <div class="stack-burger">
-        <div class="layer bun-top"><i class="seed s1"></i><i class="seed s2"></i><i class="seed s3"></i><i class="seed s4"></i><i class="seed s5"></i></div>
-        <div class="layer lettuce"></div>
-        <div class="layer cheese"></div>
-        <div class="layer patty"></div>
-        <div class="layer tomato"></div>
-        <div class="layer patty patty2"></div>
-        <div class="layer bun-bottom"></div>
+    <div class="craft-visual reveal">
+      <figure class="craft-photo">
+        <img src="assets/img/craft.jpg" alt="Blaze Burger with hand-cut fries and a cold drink on dark wood" loading="lazy" />
+        <figcaption><strong>The Blaze Classic</strong> — fresh off the grill</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== CTA BANNER ========================== -->
+<section class="cta-banner" id="order">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-copy">
+        <span class="cta-eyebrow">Limited Time</span>
+        <h2>Get 20% Off Your First Order</h2>
+        <p>Order online for pickup or delivery — hot, fresh, and smashed to order in under 15 minutes.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#menu" class="btn btn-black btn-lg">Order Online Now</a>
+        <a href="tel:+15551234567" class="btn btn-ghost-dark btn-lg">Call +1 (555) 123-4567</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========================== VISIT / CTA ========================== -->
-<section class="visit section" id="visit">
+<!-- ========================== CONTACT ========================== -->
+<section class="contact section" id="contact">
   <div class="container">
-    <div class="visit-card reveal">
-      <div class="visit-copy">
-        <h2>Hungry Yet?</h2>
-        <p>Open daily 11:00 — 23:00 · 42 Flame Street, Burger District</p>
+    <div class="section-head reveal">
+      <span class="kicker kicker-light">Get In Touch</span>
+      <h2>Contact <span class="accent-yellow">Us</span></h2>
+      <p class="section-head-light">Bookings, catering, feedback, or just burger talk — we answer fast.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="info-block">
+          <h4>Visit Us</h4>
+          <p>42 Flame Street<br />Burger District, BD 10101</p>
+        </div>
+        <div class="info-block">
+          <h4>Opening Hours</h4>
+          <p>Mon – Thu: 11:00 – 22:00<br />Fri – Sun: 11:00 – 23:30</p>
+        </div>
+        <div class="info-block">
+          <h4>Call &amp; Write</h4>
+          <p><a href="tel:+15551234567">+1 (555) 123-4567</a><br /><a href="mailto:hello@blazeburger.com">hello@blazeburger.com</a></p>
+        </div>
+        <div class="info-block">
+          <h4>Follow The Fire</h4>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.5 5 5"/></svg></a>
+            <a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div class="visit-actions">
-        <a href="#menu" class="btn btn-black btn-lg">Order Pickup</a>
-        <a href="tel:+10000000000" class="btn btn-ghost-dark btn-lg">Call Us</a>
-      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" placeholder="you@email.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" />
+          </div>
+          <div class="form-field">
+            <label for="cf-topic">Topic</label>
+            <select id="cf-topic" name="topic">
+              <option>General</option>
+              <option>Table Booking</option>
+              <option>Catering</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-msg">Message</label>
+          <textarea id="cf-msg" name="message" rows="5" placeholder="Tell us what you're craving…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg form-submit">Send Message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- ========================== FOOTER ========================== -->
 <footer class="footer">
-  <div class="container footer-inner">
-    <div class="brand footer-brand">
-      <span class="brand-flame" aria-hidden="true">🔥</span>
-      <span class="brand-name">BLAZE<span class="brand-accent">BURGER</span></span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <a href="#top" class="brand footer-brand" aria-label="Blaze Burger home">
+          <span class="brand-flame" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M13.5 0.67s0.74 2.65 0.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l0.03-0.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5 0.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-0.36 3.6-1.21 4.62-2.58 0.39 1.29 0.59 2.65 0.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
+          </span>
+          <span class="brand-name">BLAZE<span class="brand-accent">BURGER</span></span>
+        </a>
+        <p>Flame-grilled smash burgers made from fresh, never-frozen beef. Serving the Burger District since 2016.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="#top">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#craft">Our Craft</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Opening Hours</h5>
+        <p>Mon – Thu: 11:00 – 22:00</p>
+        <p>Fri – Sun: 11:00 – 23:30</p>
+        <p class="footer-note">Kitchen closes 30 min before.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>42 Flame Street, Burger District</p>
+        <a href="tel:+15551234567">+1 (555) 123-4567</a>
+        <a href="mailto:hello@blazeburger.com">hello@blazeburger.com</a>
+      </div>
     </div>
-    <nav class="footer-links" aria-label="Footer">
-      <a href="#top">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#craft">Our Craft</a>
-      <a href="#visit">Visit Us</a>
-    </nav>
-    <p class="footer-copy">© 2026 Blaze Burger. Smashed with ❤️ and fire.</p>
+    <div class="footer-bottom">
+      <p>© 2026 Blaze Burger. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
   </div>
 </footer>
 

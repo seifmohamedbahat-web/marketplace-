@@ -79,6 +79,33 @@
     });
   });
 
+  /* ---------- Contact form ---------- */
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      formStatus.classList.remove("ok", "err");
+      if (!contactForm.checkValidity()) {
+        formStatus.textContent = "Please fill in your name, email, and message.";
+        formStatus.classList.add("err");
+        contactForm.reportValidity();
+        return;
+      }
+      const btn = contactForm.querySelector(".form-submit");
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      /* No backend yet — simulate a successful send */
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = "Send Message";
+        formStatus.textContent = "Thanks! Your message is in — we'll get back to you within a day.";
+        formStatus.classList.add("ok");
+        contactForm.reset();
+      }, 900);
+    });
+  }
+
   /* =========================================================
      THREE.JS — interactive 3D burger built from primitives
      ========================================================= */
