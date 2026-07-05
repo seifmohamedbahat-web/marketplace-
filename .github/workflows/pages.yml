@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["claude/3d-burger-restaurant-site-qgsnxd"]
+    branches: ["claude/global-market-homepage-lbgssx", "claude/3d-burger-restaurant-site-qgsnxd"]
   workflow_dispatch:
 
 permissions:
