@@ -69,26 +69,29 @@
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 100);
       camera.position.set(0, 0.6, 9);
-      const renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true, antialias: true });
-      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      const renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true, antialias: false, powerPreference: "low-power" });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
       renderer.setSize(innerWidth, innerHeight);
 
-      // gold dust particle field
-      const pCount = innerWidth < 800 ? 350 : 900;
+      // gold dust particle field (two clouds rotated in opposite directions —
+      // no per-frame attribute updates, so the CPU cost stays near zero)
+      const pCount = innerWidth < 800 ? 180 : 450;
       const pGeo = new THREE.BufferGeometry();
-      const pos = new Float32Array(pCount * 3), spd = new Float32Array(pCount);
+      const pos = new Float32Array(pCount * 3);
       for (let i = 0; i < pCount; i++) {
         pos[i * 3] = (Math.random() - 0.5) * 26;
         pos[i * 3 + 1] = (Math.random() - 0.5) * 14;
         pos[i * 3 + 2] = (Math.random() - 0.5) * 12;
-        spd[i] = 0.15 + Math.random() * 0.5;
       }
       pGeo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-      const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({
+      const pMat = new THREE.PointsMaterial({
         color: 0xe8ce8c, size: 0.035, transparent: true, opacity: 0.75,
         blending: THREE.AdditiveBlending, depthWrite: false
-      }));
-      scene.add(particles);
+      });
+      const particles = new THREE.Points(pGeo, pMat);
+      const particles2 = new THREE.Points(pGeo, pMat);
+      particles2.rotation.z = Math.PI;
+      scene.add(particles, particles2);
 
       // floating wireframe "gems" — architectural forms
       const gemMat = new THREE.MeshBasicMaterial({ color: 0xc9a227, wireframe: true, transparent: true, opacity: 0.32 });
@@ -119,15 +122,20 @@
         ty = (e.clientY / innerHeight - 0.5) * 2;
       }, { passive: true });
 
+      // render only while the hero is on screen and the tab is visible
+      let heroVisible = true;
+      new IntersectionObserver(en => { heroVisible = en[0].isIntersecting; }, { threshold: 0 })
+        .observe($(".hero"));
+
       const clock = new THREE.Clock();
       (function tick() {
+        requestAnimationFrame(tick);
+        if (!heroVisible || document.hidden) return;
         const t = clock.getElapsedTime();
-        const posArr = pGeo.attributes.position.array;
-        for (let i = 0; i < pCount; i++) {
-          posArr[i * 3 + 1] += Math.sin(t * spd[i] + i) * 0.0012;
-        }
-        pGeo.attributes.position.needsUpdate = true;
         particles.rotation.y = t * 0.02;
+        particles2.rotation.y = -t * 0.014;
+        particles.position.y = Math.sin(t * 0.4) * 0.25;
+        particles2.position.y = Math.cos(t * 0.3) * 0.25;
         gems.forEach(g => {
           g.rotation.x += g.userData.rx; g.rotation.y += g.userData.ry;
           g.position.y = g.userData.baseY + Math.sin(t * 0.7 + g.userData.ph) * 0.35;
@@ -137,7 +145,6 @@
         camera.position.y += (0.6 - ty * 0.6 - camera.position.y) * 0.04;
         camera.lookAt(0, 0.3, 0);
         renderer.render(scene, camera);
-        requestAnimationFrame(tick);
       })();
 
       addEventListener("resize", () => {
@@ -149,20 +156,36 @@
   }
 
   /* ---------- Hero 3D mouse parallax (video + content layers) ---------- */
-  const heroMedia = $(".hero-media"), heroContent = $(".hero-content"), heroCard = $(".hero-card");
+  const heroMedia = $(".hero-media"), heroContent = $(".hero-content");
   if (heroMedia && matchMedia("(hover: hover)").matches && !reduceMotion) {
     const hero = $(".hero");
+    let px = 0, py = 0, rafQueued = false;
     hero.addEventListener("mousemove", e => {
       const r = hero.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      heroMedia.style.transform = `translate3d(${x * -22}px, ${y * -14}px, 0) scale(1.04)`;
-      if (heroContent) heroContent.style.transform = `translate3d(${x * 14}px, ${y * 10}px, 40px)`;
-    });
+      px = (e.clientX - r.left) / r.width - 0.5;
+      py = (e.clientY - r.top) / r.height - 0.5;
+      if (rafQueued) return;
+      rafQueued = true;
+      requestAnimationFrame(() => {
+        rafQueued = false;
+        heroMedia.style.transform = `translate3d(${px * -22}px, ${py * -14}px, 0) scale(1.04)`;
+        if (heroContent) heroContent.style.transform = `translate3d(${px * 14}px, ${py * 10}px, 40px)`;
+      });
+    }, { passive: true });
     hero.addEventListener("mouseleave", () => {
       heroMedia.style.transform = ""; if (heroContent) heroContent.style.transform = "";
     });
   }
+
+  /* ---------- pause any video that scrolls out of view ---------- */
+  const vidObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const v = en.target;
+      if (en.isIntersecting) { if (v._wasPlaying) v.play().catch(() => {}); }
+      else { v._wasPlaying = !v.paused; v.pause(); }
+    });
+  }, { threshold: 0.05 }) : null;
+  if (vidObserver) $$("video").forEach(v => vidObserver.observe(v));
 
   /* ---------- 3D tilt cards ---------- */
   function bindTilt(scope = document) {
@@ -206,15 +229,30 @@
         const bindScrub = () => {
           const dur = heroVid.duration;
           if (!dur || !isFinite(dur)) return;
-          let scrubbing = false;
+          // seek gate: never issue a new seek while the previous one is still
+          // decoding — this is what keeps scrubbing judder-free
+          let scrubbing = false, seekBusy = false, wantTime = -1;
+          heroVid.addEventListener("seeked", () => {
+            seekBusy = false;
+            if (wantTime >= 0 && Math.abs(heroVid.currentTime - wantTime) > 0.06) {
+              seekBusy = true;
+              const t = wantTime; wantTime = -1;
+              heroVid.currentTime = t;
+            } else wantTime = -1;
+          });
+          const seekTo = t => {
+            if (seekBusy) { wantTime = t; return; }
+            if (Math.abs(heroVid.currentTime - t) < 0.04) return;
+            seekBusy = true;
+            heroVid.currentTime = t;
+          };
           ScrollTrigger.create({
             trigger: ".hero", start: "top top", end: "+=220%",
             pin: true, scrub: 0.6, anticipatePin: 1,
             onUpdate(self) {
               if (self.progress > 0.001) {
                 if (!scrubbing) { scrubbing = true; heroVid.pause(); }
-                const t = self.progress * (dur - 0.08);
-                if (Math.abs(heroVid.currentTime - t) > 0.02) heroVid.currentTime = t;
+                seekTo(self.progress * (dur - 0.08));
               } else if (scrubbing) {
                 scrubbing = false;
                 heroVid.play().catch(() => {});
